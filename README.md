@@ -1,0 +1,52 @@
+# Sinatra-MySQL Resource Manager
+
+## Flatiron School Phase 2 Requirement
+
+### Overview
+
+This Resource Manager domain composed of 3 main models, Listing, User, and Genre. The models will relate to each other
+and collaborate heavily. Additionally, you're going to be extracting some common functionality out of those models and
+into a module, Concerns::Findable, which you'll then mix back into the models.
+*****
+
+### See Documentation
+
+Google
+Doc: https://docs.google.com/document/d/e/2PACX-1vR_jpC1g9arR_SajVFdnWFn5kpAgFiWd-aGGWUPvTjFyJyJv6v1Z6zPunRnU7W0HLGSR193bvL-pDSz/pub
+
+Github
+Repo: https://github.com/Marti-Dolce-Flatiron-School-Projects/sinatra_crm_assessment_030121
+Project Details:  https://github.com/Marti-Dolce-Flatiron-School-Projects/sinatra_crm_assessment_030121/projects/1?add_cards_query=is%3Aopen
+
+
+*****
+
+1. Setup project structure
+
+- [x] Use Corneal to setup baseline file structure
+- [x] Manually added documentation and links
+- [x] Manually added custom theme based on Materialize Theme and BootStrap Template
+- [x] Validate installation with shotgun
+- [x] Github Init/Commit
+
+    ### Project Site: Local Server
+    ![localhost](docs/2021-03-17_12-27-52.png)
+    
+    ### RubyMine IDE
+    ![localhost](docs/2021-03-17_12-41-57.png)
+  
+2. Setup Project MVC: Listings The listing manager uses I need to generate a demo list of properties with the Faker gem.
+   There are a couple challenges here:
+    - Generating images with Faker gem
+
+      #### Documentation:
+      https://github.com/faker-ruby/faker/blob/master/lib/locales/README.md
+      https://github.com/faker-ruby/faker#customization
+      
+
+    Add requirements for listings migration/seed
+    - [x] Created DB migration files
+    - [x] Create table Listings
+    - [x] Added listings MVC
+    - [x] Added Listings Seeds
+    - [x] Verify database/objects appear in database
