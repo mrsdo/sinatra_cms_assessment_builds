@@ -71,7 +71,7 @@ nav ul li {
 
 }
 
-#page nav a:link, #page nav a:active, #page nav a:visited, nav ul li a {
+#page nav a:link, #page nav a:active, #page nav a:visited {
     color: #D85751;
     text-decoration: none;
 }
