@@ -1,4 +1,4 @@
-<h1> Listing Details</h1>
+<h2>Selected Listing: <%= @listing.address%></h2>
 <% if signed_in? %>
 <h1>You: <%= current_user.fname %></h1>
 <h3>Email: <%= current_user.email %></h3>
@@ -8,29 +8,60 @@
 
 <!--  For detail page read only fields -->
 
-<h2>Selected Listing: <%= @listing.address%> .: Listing ID # <%= @listing.id %></h2>
-
-<h2>Details:</h2>
-
-<table>
+<table width="100%" border="1" cellspacing="1" cellpadding="1">
   <thead>
   <tr>
-    <th>ID</th>
-    <th>Image</th>
-    <th>Summary</th>
+  <tr>
+    <td><img src="<%= @listing.photo_1 %>" alt="" width="250" height="188"/></td>
+    <td><img src="<%= @listing.photo_2 %>" alt="" width="250" height="188"/></td>
+    <td><img src="<%= @listing.photo_3 %>" alt="" width="250" height="188"/></td>
+    <td><img src="<%= @listing.photo_4 %>" alt="" width="250" height="188"/></td>
+  </tr>
+
   </tr>
   </thead>
   <tbody>
-
-    <tr>
-      <td><%= @listing.id %></td>
-      <td><img src="<%= @listing.photo_1 %>" alt="" width="200" height="100"/></td>
-      <td>
-        <strong><%= @listing.address %></strong>
-        <br/><br/>
-        <%= @listing.summary.truncate(255) %><a href='/listings/<%= @listing.id %>\edit'>edit</a>
-      </td>
-    </tr>
-
+  <tr>
+    <td colspan="4"><h3>Asking Price: <%= @listing.asking_price %></h3>
+    </td>
+  </tr>
+  <tr>
+    <td><label for="tag_name" class="label-name">HOA</label></td>
+    <td><%= @listing.hoa %>
+    </td>
+    <td colspan="2" rowspan="6"><img src="https://i0.wp.com/www.rdolcegroup.com/wp-content/uploads/2017/04/bob-profile-370x403.png" align="center" width="180" height="196"><br><br>Bob Dolce<br><br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at eleifend enim, vehicula consectetur nisi. Fusce molestie ipsum nulla, vel finibus nisi interdum vitae.</p><br><br><p>847-226-2983</p>
+      <p>bob@rdolcegroup.com</p>
+    </td>
+  </tr>
+  <tr>
+    <td><label for="first_listed" class="label-name">*Date First Time listed</label></td>
+    <td><%= @listing.first_listed %></td>
+  </tr>
+  <tr>
+    <td><label for="status" class="label-name">*Dropdown Listing Status</label></td>
+    <td><%= @listing.status %>
+    </td>
+  </tr>
+  <tr>
+    <td><label for="sqft" class="label-name">SQFT</label></td>
+    <td><%= @listing.sqft %></td>
+  </tr>
+  <tr>
+    <td> <label for="bedrooms" class="label-name">Bedrooms</label></td>
+    <td><%= @listing.bedrooms %></td>
+  </tr>
+  <tr>
+    <td><label for="bathrooms" class="label-name">Bathrooms</label></td>
+    <td><%= @listing.bathrooms %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="4"><label for=“summary” class="label-name">Summary</label>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="4"><%= @listing.summary.to_s %>
+    </td>
+  </tr>
   </tbody>
 </table>
