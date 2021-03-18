@@ -4,19 +4,26 @@
 
 ### Overview
 
-This Resource Manager domain composed of 3 main models, Listing, User, and Genre. The models will relate to each other
-and collaborate heavily. Additionally, you're going to be extracting some common functionality out of those models and
-into a module, Concerns::Findable, which you'll then mix back into the models.
+This Resource Manager domain composed of 3 main models, Listing, User, and Roles. The models will relate to each other
+and collaborate heavily.
+
+This project presents concepts such as var_instantiated_object = class.method.action
+
+`ex: search = Role.find_by_id(params[:id])`
 *****
 
 ### See Documentation
 
-Google
-Doc: https://docs.google.com/document/d/e/2PACX-1vR_jpC1g9arR_SajVFdnWFn5kpAgFiWd-aGGWUPvTjFyJyJv6v1Z6zPunRnU7W0HLGSR193bvL-pDSz/pub
+Part 1: Visual Planning - Coming Soon
 
-Github
-Repo: https://github.com/Marti-Dolce-Flatiron-School-Projects/sinatra_crm_assessment_030121
-Project Details:  https://github.com/Marti-Dolce-Flatiron-School-Projects/sinatra_crm_assessment_030121/projects/1?add_cards_query=is%3Aopen
+Part 2: https://docs.google.com/document/d/1LJC_DwA8NK7IKWNCuGDUD5rEKlbdnzk_HzWBZz_ofPw/edit#
+
+Part
+3: https://docs.google.com/document/d/e/2PACX-1vR_jpC1g9arR_SajVFdnWFn5kpAgFiWd-aGGWUPvTjFyJyJv6v1Z6zPunRnU7W0HLGSR193bvL-pDSz/pub
+
+Github Repo: https://github.com/Marti-Dolce-Flatiron-School-Projects/sinatra_crm_assessment_030121
+Project
+Details:  https://github.com/Marti-Dolce-Flatiron-School-Projects/sinatra_crm_assessment_030121/projects/1?add_cards_query=is%3Aopen
 
 
 *****
@@ -34,14 +41,12 @@ Project Details:  https://github.com/Marti-Dolce-Flatiron-School-Projects/sinatr
     
     ### RubyMine IDE
     ![localhost](docs/2021-03-17_12-41-57.png)
-  
-2. Setup Project MVC: Listings The listing manager uses I need to generate a demo list of properties with the Faker gem.
-   There are a couple challenges here:
-    - Generating images with Faker gem
 
-      #### Documentation:
-      https://github.com/faker-ruby/faker/blob/master/lib/locales/README.md
-      https://github.com/faker-ruby/faker#customization
+2. Setup Project MVC: A Role, has_many :users, but a :user can have only one role.
+
+   #### Documentation:
+   https://github.com/faker-ruby/faker/blob/master/lib/locales/README.md
+   https://github.com/faker-ruby/faker#customization
       
 
     Add requirements for listings migration/seed

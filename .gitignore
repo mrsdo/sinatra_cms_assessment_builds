@@ -1,4 +1,11 @@
-/.idea/
+
+.env
+Gemfile.lock
+
+
+/.idea/*
+
+.idea
 
 /documentation/
 
