@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_18_080729) do
+ActiveRecord::Schema.define(version: 2021_03_18_094837) do
 
   create_table "listings", charset: "utf8", force: :cascade do |t|
     t.string "address"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_03_18_080729) do
     t.string "community"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "roles", charset: "utf8", force: :cascade do |t|
@@ -46,6 +47,8 @@ ActiveRecord::Schema.define(version: 2021_03_18_080729) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "role_id"
+    t.index ["role_id"], name: "index_users_on_role_id"
   end
 
 end

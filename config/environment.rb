@@ -10,15 +10,15 @@ Bundler.require(:default, ENV['SINATRA_ENV'])
 
 ActiveRecord::Base.logger = Logger.new($stdout)
 
-configure :development do
-  ActiveRecord::Base.establish_connection(
-    adapter: 'mysql2',
-    encoding: 'utf8',
-    database: 'dev_sinatra_crm_assessment_030121_02',
-    username: 'root',
-    password: 'palo5non!'
-  )
-end
+# configure :development do
+#   ActiveRecord::Base.establish_connection(
+#     adapter: 'mysql2',
+#     encoding: 'utf8',
+#     database: "<%= ENV["DATABASE_KEY"] %>",
+#     username: "<%= ENV["USERNAME_KEY"] %>",
+#     password: "<%= ENV["PASSWORD_KEY"] %>"
+#   )
+# end
 
 configure :production do
   ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'mysql://localhost/mydb')

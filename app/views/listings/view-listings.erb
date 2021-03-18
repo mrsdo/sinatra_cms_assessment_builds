@@ -1,5 +1,6 @@
-<h2>My Listings</h2>
-<!--  Include sign-in verification -->
+
+<h2>View Current Listings</h2>
+
 <table>
   <thead>
   <tr>
@@ -9,14 +10,14 @@
   </tr>
   </thead>
   <tbody>
-  <% Array(@listings).each do |listing|%>
+  <% @listing.each do |listing| %>
     <tr>
       <td><%= listing.id %></td>
       <td><img src="<%= listing.photo_1 %>" alt="" width="200" height="100"/></td>
       <td>
         <strong><%= listing.address %></strong>
         <br/><br/>
-        <%= listing.summary.truncate(255) %><a href='/listings/<%= listing.id %>\edit'>edit</a>
+        <% listing.summary %><a href='/listings/<%= listing.id %>/details'>Read More</a>
       </td>
     </tr>
   <% end %>

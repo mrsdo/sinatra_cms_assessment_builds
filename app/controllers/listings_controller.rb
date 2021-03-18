@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ListingsController < ApplicationController
   # Add Routes
   # Add Models
@@ -6,9 +8,32 @@ class ListingsController < ApplicationController
   # Use Tux validate db objects access, CRUD functionality
 
   get "/listings" do
-    @listings = Listing.all
-    erb :"/listings/index.html"
+    # user is signed in?
+    if signed_in? == true
+      # user's session params = to user_id
+      @user = User.find(session[:user_id])
+      # list where user_id = to current user
+      @listings = Listing.where(user_id: current_user)
+      # binding.pry
+      erb :"listings/show.html"
+    else
+      redirect "/signin"
+    end
+  end
 
+  # GET: NOT LOGGED IN
+  get '/listings/view-listings' do
+    @listing = Listing.all
+    erb :"/listings/view-listings"
+  end
+
+  # GET: Get Listings Details
+  get '/listings/:id/details' do
+    #
+    # ToDo: add viewer control feature where user can view based on role and/or group (paid listings membership)
+    #
+    @listing = Listing.find(params[:id])
+    erb :"/listings/details.html"
   end
 
   # new

@@ -7,56 +7,61 @@ puts 'Now running DB seed...'
 # # Don't let seed duplicate data more than once
 puts 'Cleaning database...'
 
-# Role.create([
-#               { role_name: "admin" },
-#               { role_name: "agent" },
-#               { role_name: "guest" }
-#             ])
+Role.create([
+              { role_name: 'Tenant' },
+              { role_name: 'Agent' },
+              { role_name: 'Vendor' },
+              { role_name: 'Property Manager' }
+            ])
 
-# puts 'Creating sample Users...'
-# User.create([
-#               {
-#                 fname: 'Neeson',
-#                 lname: 'Grant',
-#                 username: 'ngrant',
-#                 email: 'new@email.com',
-#                 password_digest: '$2a$12$n/CEaft4d0qmEUgxnNAPFurBBgw4PI9eVrv/rUewwlTFPn7NY/Yuq',
-#                 created_at: '2018-04-14 02:09:44.528632',
-#                 updated_at: '2018-04-19 16:22:55.254084'
-#               },
-#               {
-#                 fname: 'Salma',
-#                 lname: 'Tine',
-#                 username: 'stine',
-#                 email: 'salma@hotmail.com',
-#                 password_digest: '$2a$12$n/CEaft4d0qmEUgxnNAPFurBBgw4PI9eVrv/rUewwlTFPn7NY/Yuq',
-#                 created_at: '2018-04-14 02:17:30.310658',
-#                 updated_at: '2018-04-14 02:17:30.310658'
-#               },
-#               {
-#                 fname: 'Rend',
-#                 lname: 'Miller',
-#                 username: 'rmiller',
-#                 email: 'hend@anything.com',
-#                 password_digest: '$2a$12$n/CEaft4d0qmEUgxnNAPFurBBgw4PI9eVrv/rUewwlTFPn7NY/Yuq',
-#                 created_at: '2018-04-16 23:44:09.971071',
-#                 updated_at: '2018-04-16 23:44:09.971071'
-#               },
-#               {
-#                 fname: 'Eddie',
-#                 lname: 'Opara',
-#                 username: 'eopara',
-#                 email: 'eopara@gmail.com',
-#                 password_digest: '$2a$12$n/CEaft4d0qmEUgxnNAPFurBBgw4PI9eVrv/rUewwlTFPn7NY/Yuq',
-#                 created_at: '2021-02-22 18:42:08.345412',
-#                 updated_at: '2021-02-22 18:42:08.345412'
-#               }
-#             ])
-# puts 'Users Completed...'
-#
-# puts '.......'
-#
-# puts '.......'
+puts 'Creating sample Users...'
+User.create([
+              {
+                fname: 'Neeson',
+                lname: 'Grant',
+                username: 'ngrant',
+                email: 'new@email.com',
+                password_digest: '$2a$12$n/CEaft4d0qmEUgxnNAPFurBBgw4PI9eVrv/rUewwlTFPn7NY/Yuq',
+                role_id: 1,
+                created_at: '2018-04-14 02:09:44.528632',
+                updated_at: '2018-04-19 16:22:55.254084'
+              },
+              {
+                fname: 'Salma',
+                lname: 'Tine',
+                username: 'stine',
+                email: 'salma@hotmail.com',
+                password_digest: '$2a$12$n/CEaft4d0qmEUgxnNAPFurBBgw4PI9eVrv/rUewwlTFPn7NY/Yuq',
+                role_id: 2,
+                created_at: '2018-04-14 02:17:30.310658',
+                updated_at: '2018-04-14 02:17:30.310658'
+              },
+              {
+                fname: 'Rend',
+                lname: 'Miller',
+                username: 'rmiller',
+                email: 'hend@anything.com',
+                password_digest: '$2a$12$n/CEaft4d0qmEUgxnNAPFurBBgw4PI9eVrv/rUewwlTFPn7NY/Yuq',
+                role_id: 3,
+                created_at: '2018-04-16 23:44:09.971071',
+                updated_at: '2018-04-16 23:44:09.971071'
+              },
+              {
+                fname: 'Eddie',
+                lname: 'Opara',
+                username: 'eopara',
+                email: 'eopara@gmail.com',
+                password_digest: '$2a$12$n/CEaft4d0qmEUgxnNAPFurBBgw4PI9eVrv/rUewwlTFPn7NY/Yuq',
+                role_id: 4,
+                created_at: '2021-02-22 18:42:08.345412',
+                updated_at: '2021-02-22 18:42:08.345412'
+              }
+            ])
+puts 'Users Completed...'
+
+puts '.......'
+
+puts '.......'
 
 ##  TODO: make the counter a method for seeds
 puts 'Adding Listings'
@@ -86,7 +91,7 @@ num = 0
                                                          search_terms: ["homes_for_sale?random=#{i += 1}"]),
                    'photo_4' => Faker::LoremFlickr.image(size: '320x240',
                                                          search_terms: ["homes_for_sale?random=#{i += 1}"]),
-                   # "user_id" => User.ids.sample,
+                   'user_id' => User.ids.sample,
                    'phone' => Faker::PhoneNumber.phone_number,
                    'community' => 'Homely'
                  })

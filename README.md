@@ -71,15 +71,16 @@ Details:  https://github.com/Marti-Dolce-Flatiron-School-Projects/sinatra_crm_as
     - [x] Added User Seeds
     - [x] Verify database/objects appear in database
     - [x] Verify CRU (No deleting users) see #ToDo
+    - [x] Add Migration: add_role_reference_to_user
     - [ ] Bonus:  Add validations
 
 4. Setup Listings MVC: A Listing, belongs_to :user
 
    Add requirements for listings migration/seed
    - [x] Created DB migration files
-   - [ ] Add Migration: add_role_and_listing_references_to_user
-   - [ ] Create table Listings
-   - [ ] Added Listings Seeds
-   - [ ] Verify database/objects appear in database
+   - [x] Add Migration: add_user_reference_to_listing
+   - [x] Create table Listings
+   - [x] Added Listings Seeds
+   - [x] Verify database/objects appear in database
    - [ ] Verify CRUD 
-   - [ ] Bonus:  Add validations
+   - [ ] Bonus:  Add validations, add details page, add confirmation page (CRUD/show.html)

@@ -1,0 +1,36 @@
+<h1> Listing Details</h1>
+<% if signed_in? %>
+<h1>You: <%= current_user.fname %></h1>
+<h3>Email: <%= current_user.email %></h3>
+<% else %>
+  [Add listing user profile/contact card here]
+<% end %>
+
+<!--  For detail page read only fields -->
+
+<h2>Selected Listing: <%= @listing.address%> .: Listing ID # <%= @listing.id %></h2>
+
+<h2>Details:</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Image</th>
+    <th>Summary</th>
+  </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td><%= @listing.id %></td>
+      <td><img src="<%= @listing.photo_1 %>" alt="" width="200" height="100"/></td>
+      <td>
+        <strong><%= @listing.address %></strong>
+        <br/><br/>
+        <%= @listing.summary.truncate(255) %><a href='/listings/<%= @listing.id %>\edit'>edit</a>
+      </td>
+    </tr>
+
+  </tbody>
+</table>

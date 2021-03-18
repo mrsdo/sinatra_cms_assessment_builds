@@ -3,19 +3,17 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("ENV_MAX_THREADS") { 5 } %>
+  database: <%= ENV["DATABASE_KEY"] %>
   username: <%= ENV["USERNAME_KEY"] %>
   password: <%= ENV["PASSWORD_KEY"] %>
 
 development:
   <<: *default
-  database: dev_sinatra_crm_assessment_030121_02
 
 test:
-  adapter: mysql2
-  database: test_sinatra_crm_assessment_030121_02
-  username: <%= ENV["USERNAME_KEY"] %>
-  password: <%= ENV["PASSWORD_KEY"] %>
+  <<: *default
+
 
 production:
   <<: *default
-  database: sch_listings mydb
+
