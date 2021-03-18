@@ -62,7 +62,7 @@ Details:  https://github.com/Marti-Dolce-Flatiron-School-Projects/sinatra_crm_as
 
 3. Setup Users MVC: A User, has_many :listings and has_one role
 
-    Add requirements for listings migration/seed
+    Add requirements for Users migration/seed
     - [x] Created DB migration files
     - [x] Create table Users
     - [x] Added Users MVC #ToDo - Add Active/Inactive via cancel btn on user dashboard Try{ - [ ] conditional wrapper
@@ -71,5 +71,15 @@ Details:  https://github.com/Marti-Dolce-Flatiron-School-Projects/sinatra_crm_as
     - [x] Added User Seeds
     - [x] Verify database/objects appear in database
     - [x] Verify CRU (No deleting users) see #ToDo
-    - [ ] Add Migration: add_roleid_to_users_table
     - [ ] Bonus:  Add validations
+
+4. Setup Listings MVC: A Listing, belongs_to :user
+
+   Add requirements for listings migration/seed
+   - [x] Created DB migration files
+   - [ ] Add Migration: add_role_and_listing_references_to_user
+   - [ ] Create table Listings
+   - [ ] Added Listings Seeds
+   - [ ] Verify database/objects appear in database
+   - [ ] Verify CRUD 
+   - [ ] Bonus:  Add validations
