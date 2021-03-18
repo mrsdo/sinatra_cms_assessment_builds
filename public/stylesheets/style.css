@@ -71,7 +71,7 @@ nav ul li {
 
 }
 
-#page nav a:link, #page nav a:active, #page nav a:visited {
+#page nav a:link, #page nav a:active, #page nav a:visited, nav ul li a {
     color: #D85751;
     text-decoration: none;
 }
@@ -284,12 +284,10 @@ div.button a, div.button a:active, div.button a:visited {
     text-decoration: none;
 
 }
-
 div.button a:hover {
     text-decoration: none;
     color: #818181;
 }
-
 .copyright {
     text-align: center;
     padding-top: 20px;
@@ -530,7 +528,6 @@ footer {
         padding-top: 0;
     }
 }
-
 /* Tables */
 table, th, td {
     border: none;
@@ -589,35 +586,28 @@ td, th {
         position: relative;
         /* sort out borders */
     }
-
     table.responsive-table td:empty:before {
         content: '\00a0';
     }
-
     table.responsive-table th,
     table.responsive-table td {
         margin: 0;
         vertical-align: top;
     }
-
     table.responsive-table th {
         text-align: left;
     }
-
     table.responsive-table thead {
         display: block;
         float: left;
     }
-
     table.responsive-table thead tr {
         display: block;
         padding: 0 10px 0 0;
     }
-
     table.responsive-table thead tr th::before {
         content: "\00a0";
     }
-
     table.responsive-table tbody {
         display: block;
         width: auto;
@@ -625,28 +615,23 @@ td, th {
         overflow-x: auto;
         white-space: nowrap;
     }
-
     table.responsive-table tbody tr {
         display: inline-block;
         vertical-align: top;
     }
-
     table.responsive-table th {
         display: block;
         text-align: right;
     }
-
     table.responsive-table td {
         display: block;
         min-height: 1.25em;
         text-align: left;
     }
-
     table.responsive-table tr {
         border-bottom: none;
         padding: 0 10px;
     }
-
     table.responsive-table thead {
         border: 0;
         border-right: 1px solid rgba(0, 0, 0, 0.12);
@@ -668,7 +653,6 @@ td, th {
     display: grid;
     grid-row-gap: 5px;
 }
-
 button,
 input,
 optgroup,
@@ -683,7 +667,6 @@ textarea {
     margin: 0;
     /* 2 */
 }
-
 /* Switch to two columns in wider viewports */
 @media (min-width: 29.375rem) {
     .form {
@@ -702,27 +685,21 @@ textarea {
     .label-name {
         grid-area: label-name;
     }
-
     .label-email {
         grid-area: label-email;
     }
-
     .label-message {
         grid-area: label-msg;
     }
-
     .field-name {
         grid-area: field-name;
     }
-
     .field-email {
         grid-area: field-email;
     }
-
     .field-message {
         grid-area: field-msg;
     }
-
     .button {
         grid-area: button;
     }

@@ -19,7 +19,6 @@ gem 'sinatra-advanced-routes'
 gem 'sinatra-flash'
 
 gem 'thin'
-gem 'tux'
 
 group :test do
   gem 'capybara'
@@ -28,3 +27,5 @@ group :test do
   gem 'rspec'
   gem 'sqlite3'
 end
+
+gem "tux", "~> 0.3.0"

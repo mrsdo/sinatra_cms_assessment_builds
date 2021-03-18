@@ -8,11 +8,11 @@ default: &default
 
 development:
   <<: *default
-  database: dev_sinatra_crm_assessment_030121
+  database: dev_sinatra_crm_assessment_030121_02
 
 test:
   adapter: mysql2
-  database: test_sinatra_crm_assessment_030121
+  database: test_sinatra_crm_assessment_030121_02
   username: <%= ENV["USERNAME_KEY"] %>
   password: <%= ENV["PASSWORD_KEY"] %>
 

@@ -3,16 +3,15 @@
 require_relative '../app/models/listing'
 require 'faker'
 
-puts 'Running DB seed...'
-
+puts 'Now running DB seed...'
 # # Don't let seed duplicate data more than once
 puts 'Cleaning database...'
 
-# Role.create([
-#                {role_name: "admin"},
-#                {role_name: "agent"},
-#                {role_name: "guest"}
-#              ])
+Role.create([
+              { role_name: "admin" },
+              { role_name: "agent" },
+              { role_name: "guest" }
+            ])
 
 # puts "Creating sample Users..."
 # User.create([
@@ -57,44 +56,43 @@ puts 'Cleaning database...'
 #
 
 puts '.......'
-puts 'Cleaning Listings Table'
-Listing.destroy_all
 
 puts '.......'
 
-puts 'Adding Listings'
-num = 0
-30.times do
-  percent = num / 30 * 100
-  # sleep(0.05)
-  print 'Seeding complete in'
-  print "...#{num += 1} seconds\r"
-  i = num += 1
-  Listing.create({
-                   'address' => Faker::Address.full_address,
-                   'hoa' => Faker::Address.community,
-                   'status' => (1..2).to_a.sample.to_s, # Active/Inactive Faker?
-                   'first_listed' => Faker::Date.between(from: '2001-03-11', to: '2021-03-14'),
-                   'bedrooms' => "#{(1..5).to_a.sample} BR",
-                   'bathrooms' => "#{(1..5).to_a.sample} BA",
-                   'summary' => Faker::Lorem.paragraph(sentence_count: 2, supplemental: false,
-                                                       random_sentences_to_add: 4),
-                   'sqft' => "#{(900..6000).to_a.sample} sq. ft.",
-                   'asking_price' => "$#{(10_000..30_000_000).to_a.sample}",
-                   'photo_1' => Faker::LoremFlickr.image(size: '320x240',
-                                                         search_terms: ["homes_for_sale?random=#{i += 1}"]),
-                   'photo_2' => Faker::LoremFlickr.image(size: '320x240',
-                                                         search_terms: ["homes_for_sale?random=#{i += 1}"]),
-                   'photo_3' => Faker::LoremFlickr.image(size: '320x240',
-                                                         search_terms: ["homes_for_sale?random=#{i += 1}"]),
-                   'photo_4' => Faker::LoremFlickr.image(size: '320x240',
-                                                         search_terms: ["homes_for_sale?random=#{i += 1}"]),
-                   # "user_id" => User.ids.sample,
-                   'phone' => Faker::PhoneNumber.phone_number,
-                   'community' => 'Homely'
-                 })
-
-  num += 1
-
-  system('clear')
-end
+##  TODO: make the counter a method for seeds
+# puts 'Adding Listings'
+# num = 0
+# 30.times do
+#   percent = num / 30 * 100
+#   # sleep(0.05)
+#   print 'Seeding complete in'
+#   print "...#{percent += 1} seconds\r"
+#   i = num += 1
+#   Listing.create({
+#                    'address' => Faker::Address.full_address,
+#                    'hoa' => Faker::Address.community,
+#                    'status' => (1..2).to_a.sample.to_s, # Active/Inactive Faker?
+#                    'first_listed' => Faker::Date.between(from: '2001-03-11', to: '2021-03-14'),
+#                    'bedrooms' => "#{(1..5).to_a.sample} BR",
+#                    'bathrooms' => "#{(1..5).to_a.sample} BA",
+#                    'summary' => Faker::Lorem.paragraph(sentence_count: 2, supplemental: false,
+#                                                        random_sentences_to_add: 4),
+#                    'sqft' => "#{(900..6000).to_a.sample} sq. ft.",
+#                    'asking_price' => "$#{(10_000..30_000_000).to_a.sample}",
+#                    'photo_1' => Faker::LoremFlickr.image(size: '320x240',
+#                                                          search_terms: ["homes_for_sale?random=#{i += 1}"]),
+#                    'photo_2' => Faker::LoremFlickr.image(size: '320x240',
+#                                                          search_terms: ["homes_for_sale?random=#{i += 1}"]),
+#                    'photo_3' => Faker::LoremFlickr.image(size: '320x240',
+#                                                          search_terms: ["homes_for_sale?random=#{i += 1}"]),
+#                    'photo_4' => Faker::LoremFlickr.image(size: '320x240',
+#                                                          search_terms: ["homes_for_sale?random=#{i += 1}"]),
+#                    # "user_id" => User.ids.sample,
+#                    'phone' => Faker::PhoneNumber.phone_number,
+#                    'community' => 'Homely'
+#                  })
+#
+#   num += 1
+#
+#   system('clear')
+# end
