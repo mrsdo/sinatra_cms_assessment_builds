@@ -7,16 +7,17 @@
 <h2>Details:</h2>
 
 <form class="form" action="/listings/<%= @listing.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
   <table width="100%" border="1" cellspacing="1" cellpadding="1">
     <tbody>
     <tr>
-      <th colspan="2" scope="col">Listing Name: <input name="name" type="text" value="<%= @listing.address%>" style="width:400px;" ></th>
+      <th colspan="2" scope="col">Listing Address: <input name="address" type="text" value="<%= @listing.address%>" style="width:400px;" ></th>
     </tr>
     <tr>
       <th colspan="2" scope="col">Asking Price: <input type="text" name="asking_price" value="<%= @listing.asking_price %>"></th>
     </tr>
     <tr>
-      <td><label for="tag_name" class="label-name">HOA</label></td>
+      <td><label for="hoa" class="label-name">HOA</label></td>
       <td> <label for="bedrooms" class="label-name">Bedrooms</label></td>
     </tr>
     <tr>

@@ -12,7 +12,7 @@ class ListingsController < ApplicationController
     if signed_in? == true
       # user's session params = to user_id
       @user = User.find(session[:user_id])
-      # list where user_id = to current user
+      # Listings for current user_id = to current user
       @listings = Listing.where(user_id: current_user)
       # binding.pry
       erb :"listings/show.html"
@@ -68,7 +68,7 @@ class ListingsController < ApplicationController
                     :status => params[:status], :bathrooms => params[:bathrooms],
                     :first_listed => params[:first_listed], :sqft => params[:sqft],
                     :summary.to_s => params[:summary.to_s])
-    redirect to "/listings/#{@listing.id}"
+    redirect to "/listings"
   end
 
   # destroy

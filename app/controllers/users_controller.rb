@@ -6,7 +6,8 @@ class UsersController < ApplicationController
       # then find the user who's session params = to user_id
       @user = User.find(session[:user_id])
       # Display the listings where user_id = to current user
-
+      # Listings for current user_id = to current user
+      @listings = Listing.where(user_id: current_user)
       erb :"users/show.html"
     else
       redirect '/users/signin'
@@ -42,6 +43,8 @@ class UsersController < ApplicationController
   # POST: /send the sign-in info to the server and let the user to login
   post '/signin' do
     @user = User.find_by(email: params[:email])
+    # Listings for current user_id = to current user
+    @listings = Listing.where(user_id: current_user)
     if @user&.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect '/listings'
