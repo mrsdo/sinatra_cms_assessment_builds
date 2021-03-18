@@ -6,15 +6,14 @@ class ListingsController < ApplicationController
   # Use Tux validate db objects access, CRUD functionality
 
   get "/listings" do
-    binding.pry
-    @listing = Listing.all
+    @listings = Listing.all
     erb :"/listings/index.html"
 
   end
 
   # new
   get '/listings/new' do
-    @listing = Listing.new
+    @listings = Listing.new
     erb :"/listings/new.html"
   end
 
@@ -39,7 +38,7 @@ class ListingsController < ApplicationController
   # update
   patch '/listings/:id' do
     @listing = Listing.find(params[:id])
-    @listing.update(:name => params[:name], :tag_name => params[:tag_name],
+    @listing.update(:address => params[:address], :hoa => params[:hoa],
                     :asking_price => params[:asking_price], :bedrooms => params[:bedrooms],
                     :status => params[:status], :bathrooms => params[:bathrooms],
                     :first_listed => params[:first_listed], :sqft => params[:sqft],
