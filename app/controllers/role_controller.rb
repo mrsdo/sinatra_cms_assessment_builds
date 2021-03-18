@@ -4,15 +4,14 @@
 class RoleController < ApplicationController
 
   get "/roles" do
-
     @role = Role.all
-    erb :"/roles/index.html"
+    erb :"/roles/index"
   end
 
   # new
   get '/roles/new' do
     @role = Role.new
-    erb :"/roles/new.html"
+    erb :"/roles/new"
   end
 
   # create
@@ -24,19 +23,19 @@ class RoleController < ApplicationController
   # show
   get '/roles/:id' do
     @role = Role.find(params[:id])
-    erb :"/roles/show.html"
+    erb :"/roles/show"
   end
 
   # edit
   get '/roles/:id/edit' do
     @role = Role.find(params[:id])
-    erb :"/roles/edit.html"
+    erb :"/roles/edit"
   end
 
   # update
   patch '/roles/:id' do
     @role = Role.find(params[:id])
-    @role.update(params[:role])
+    @role.update(:role_name => params[:role_name])
     redirect to "/roles/#{@role.id}"
   end
 
@@ -49,12 +48,5 @@ class RoleController < ApplicationController
   def destroy
     Role.destroy(params[:id])
     redirect to '/roles'
-  end
-
-  def roles_show
-    @user_roles = Role.find_by(params[Role.role_name]), WHERE
-    Role.role_name NOT LIKE '%admin%'
-
-    Role.find_by(title: params["title"])
   end
 end
