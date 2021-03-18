@@ -2,8 +2,7 @@
 
 # Roles
 class RoleController < ApplicationController
-
-  get "/roles" do
+  get '/roles' do
     @role = Role.all
     erb :"/roles/index"
   end
@@ -35,7 +34,7 @@ class RoleController < ApplicationController
   # update
   patch '/roles/:id' do
     @role = Role.find(params[:id])
-    @role.update(:role_name => params[:role_name])
+    @role.update(role_name: params[:role_name])
     redirect to "/roles/#{@role.id}"
   end
 
