@@ -1,0 +1,2 @@
+require "monkey"
+MonkeyLib = Monkey

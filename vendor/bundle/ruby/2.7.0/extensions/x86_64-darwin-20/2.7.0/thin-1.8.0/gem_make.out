@@ -1,0 +1,21 @@
+current directory: /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/thin-1.8.0/ext/thin_parser
+/Users/mrsdo/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/mrsdo/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20210204-18169-1rzoa7z.rb extconf.rb
+checking for main() in -lc... yes
+creating Makefile
+
+current directory: /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/thin-1.8.0/ext/thin_parser
+make "DESTDIR=" clean
+
+current directory: /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/thin-1.8.0/ext/thin_parser
+make "DESTDIR="
+compiling parser.c
+parser.c:31:18: warning: unused variable 'http_parser_en_main' [-Wunused-const-variable]
+static const int http_parser_en_main = 1;
+                 ^
+1 warning generated.
+compiling thin.c
+linking shared-object thin_parser.bundle
+
+current directory: /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/thin-1.8.0/ext/thin_parser
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 thin_parser.bundle ./.gem.20210204-18169-16rh9ye

@@ -1,0 +1,16 @@
+current directory: /home/mrsdo/fis.shegottablog.com/public/vendor/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/home/mrsdo/.rvm/rubies/ruby-2.7.2/bin/ruby -I /home/mrsdo/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20210212-2749493-1kvwlv8.rb extconf.rb
+creating Makefile
+
+current directory: /home/mrsdo/fis.shegottablog.com/public/vendor/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" clean
+
+current directory: /home/mrsdo/fis.shegottablog.com/public/vendor/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR="
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.so
+
+current directory: /home/mrsdo/fis.shegottablog.com/public/vendor/bundle/ruby/2.7.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" install
+/usr/bin/install -m 0755 fastfilereaderext.so ./.gem.20210212-2749493-u7pzb3

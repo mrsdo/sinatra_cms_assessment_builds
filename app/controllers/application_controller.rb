@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require './config/environment'
 
 class ApplicationController < Sinatra::Base
-
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
@@ -12,13 +13,38 @@ class ApplicationController < Sinatra::Base
   get '/' do
     erb :welcome
   end
+
+  get '/search' do
+    @listings = Listing.find_by(address: params['address'])
+    erb :results
+  end
+
+  get '/logout' do
+    redirect_if_not_logged_in
+    # logout a user
+    # session.clear
+    session.delete('user_id')
+    redirect '/'
+  end
+
   helpers do
+    def current_user
+      # memoization
+      @current_user ||= User.find_by_id(session['user_id'])
+
+    end
+
     def signed_in?
       !!current_user
     end
 
-    def current_user
-      @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+
+    def redirect_if_not_logged_in
+      redirect '/sessions/new' unless signed_in?
+    end
+
+    def redirect_if_logged_in
+      redirect '/listings' if signed_in?
     end
   end
 end
