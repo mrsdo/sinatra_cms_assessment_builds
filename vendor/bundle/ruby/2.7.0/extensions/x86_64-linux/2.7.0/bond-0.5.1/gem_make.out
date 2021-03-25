@@ -1,0 +1,16 @@
+current directory: /home/mrsdo/fis.shegottablog.com/public/vendor/bundle/ruby/2.7.0/gems/bond-0.5.1/ext/readline_line_buffer
+/home/mrsdo/.rvm/rubies/ruby-2.7.2/bin/ruby -I /home/mrsdo/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20210212-2749493-141ygb.rb extconf.rb
+
+current directory: /home/mrsdo/fis.shegottablog.com/public/vendor/bundle/ruby/2.7.0/gems/bond-0.5.1/ext/readline_line_buffer
+make "DESTDIR=" clean
+make: *** No rule to make target 'clean'.  Stop.
+
+current directory: /home/mrsdo/fis.shegottablog.com/public/vendor/bundle/ruby/2.7.0/gems/bond-0.5.1/ext/readline_line_buffer
+make "DESTDIR="
+echo "This is a dummy extension"
+This is a dummy extension
+
+current directory: /home/mrsdo/fis.shegottablog.com/public/vendor/bundle/ruby/2.7.0/gems/bond-0.5.1/ext/readline_line_buffer
+make "DESTDIR=" install
+echo "This is a dummy extension"
+This is a dummy extension

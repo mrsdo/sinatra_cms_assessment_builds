@@ -1,0 +1,17 @@
+current directory: /home/mrsdo/fis.shegottablog.com/public/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/src/helper-scripts/download_binaries
+/home/mrsdo/.rvm/rubies/ruby-2.7.2/bin/ruby -I /home/mrsdo/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20210212-2749493-14571v1.rb extconf.rb
+Attempting to download https://github.com/phusion/passenger/releases/download/release-6.0.7/rubyext-ruby-2.7.2-x86_64-linux.tar.gz into /home/mrsdo/fis.shegottablog.com/public/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/download_cache
+Attempting to download https://github.com/phusion/passenger/releases/download/release-6.0.7/nginx-1.18.0-x86_64-linux.tar.gz into /home/mrsdo/fis.shegottablog.com/public/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/download_cache
+Attempting to download https://github.com/phusion/passenger/releases/download/release-6.0.7/agent-x86_64-linux.tar.gz into /home/mrsdo/fis.shegottablog.com/public/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/download_cache
+
+current directory: /home/mrsdo/fis.shegottablog.com/public/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/src/helper-scripts/download_binaries
+make "DESTDIR=" clean
+true
+
+current directory: /home/mrsdo/fis.shegottablog.com/public/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/src/helper-scripts/download_binaries
+make "DESTDIR="
+true
+
+current directory: /home/mrsdo/fis.shegottablog.com/public/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/src/helper-scripts/download_binaries
+make "DESTDIR=" install
+true

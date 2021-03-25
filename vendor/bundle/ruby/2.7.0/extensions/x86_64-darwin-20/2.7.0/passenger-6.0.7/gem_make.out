@@ -1,0 +1,32 @@
+current directory: /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/src/helper-scripts/download_binaries
+/Users/mrsdo/.rvm/rubies/ruby-2.7.2/bin/ruby -I /Users/mrsdo/.rvm/rubies/ruby-2.7.2/lib/ruby/2.7.0 -r ./siteconf20210204-18169-cb6kpc.rb extconf.rb
+Attempting to download https://github.com/phusion/passenger/releases/download/release-6.0.7/rubyext-ruby-2.7.2-x86_64-macosx.tar.gz into /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/download_cache
+*** Could not download https://github.com/phusion/passenger/releases/download/release-6.0.7/rubyext-ruby-2.7.2-x86_64-macosx.tar.gz: The requested URL returned error: 404 
+Attempting to download https://oss-binaries.phusionpassenger.com/binaries/passenger/by_release/6.0.7/rubyext-ruby-2.7.2-x86_64-macosx.tar.gz into /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/download_cache
+*** Could not download https://oss-binaries.phusionpassenger.com/binaries/passenger/by_release/6.0.7/rubyext-ruby-2.7.2-x86_64-macosx.tar.gz: The requested URL returned error: 404 
+Attempting to download https://s3.amazonaws.com/phusion-passenger/binaries/passenger/by_release/6.0.7/rubyext-ruby-2.7.2-x86_64-macosx.tar.gz into /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/download_cache
+*** Could not download https://s3.amazonaws.com/phusion-passenger/binaries/passenger/by_release/6.0.7/rubyext-ruby-2.7.2-x86_64-macosx.tar.gz: The requested URL returned error: 403 Forbidden
+Attempting to download https://github.com/phusion/passenger/releases/download/release-6.0.7/nginx-1.18.0-x86_64-macosx-11.2.tar.gz into /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/download_cache
+*** Could not download https://github.com/phusion/passenger/releases/download/release-6.0.7/nginx-1.18.0-x86_64-macosx-11.2.tar.gz: The requested URL returned error: 404 
+Attempting to download https://oss-binaries.phusionpassenger.com/binaries/passenger/by_release/6.0.7/nginx-1.18.0-x86_64-macosx-11.2.tar.gz into /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/download_cache
+*** Could not download https://oss-binaries.phusionpassenger.com/binaries/passenger/by_release/6.0.7/nginx-1.18.0-x86_64-macosx-11.2.tar.gz: The requested URL returned error: 404 
+Attempting to download https://s3.amazonaws.com/phusion-passenger/binaries/passenger/by_release/6.0.7/nginx-1.18.0-x86_64-macosx-11.2.tar.gz into /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/download_cache
+*** Could not download https://s3.amazonaws.com/phusion-passenger/binaries/passenger/by_release/6.0.7/nginx-1.18.0-x86_64-macosx-11.2.tar.gz: The requested URL returned error: 403 Forbidden
+Attempting to download https://github.com/phusion/passenger/releases/download/release-6.0.7/agent-x86_64-macosx-11.2.tar.gz into /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/download_cache
+*** Could not download https://github.com/phusion/passenger/releases/download/release-6.0.7/agent-x86_64-macosx-11.2.tar.gz: The requested URL returned error: 404 
+Attempting to download https://oss-binaries.phusionpassenger.com/binaries/passenger/by_release/6.0.7/agent-x86_64-macosx-11.2.tar.gz into /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/download_cache
+*** Could not download https://oss-binaries.phusionpassenger.com/binaries/passenger/by_release/6.0.7/agent-x86_64-macosx-11.2.tar.gz: The requested URL returned error: 404 
+Attempting to download https://s3.amazonaws.com/phusion-passenger/binaries/passenger/by_release/6.0.7/agent-x86_64-macosx-11.2.tar.gz into /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/download_cache
+*** Could not download https://s3.amazonaws.com/phusion-passenger/binaries/passenger/by_release/6.0.7/agent-x86_64-macosx-11.2.tar.gz: The requested URL returned error: 403 Forbidden
+
+current directory: /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/src/helper-scripts/download_binaries
+make "DESTDIR=" clean
+true
+
+current directory: /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/src/helper-scripts/download_binaries
+make "DESTDIR="
+true
+
+current directory: /Users/mrsdo/Development/Phase-2-Portfolio-Project/vendor/bundle/ruby/2.7.0/gems/passenger-6.0.7/src/helper-scripts/download_binaries
+make "DESTDIR=" install
+true
