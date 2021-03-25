@@ -58,7 +58,7 @@ Details:  https://github.com/Marti-Dolce-Flatiron-School-Projects/sinatra_crm_as
     - [x] Added Roles Seeds
     - [x] Verify database/objects appear in database
     - [x] Verify CRUD
-    - [] Bonus:  Add validations
+    - [ ] Bonus:  Add validations
 
 3. Setup Users MVC: A User, has_many :listings and has_one role
 
@@ -77,9 +77,9 @@ Details:  https://github.com/Marti-Dolce-Flatiron-School-Projects/sinatra_crm_as
 
    Add requirements for listings migration/seed
    - [x] Created DB migration files
-   - [ ] Add Migration: add_role_and_listing_references_to_user
-   - [ ] Create table Listings
-   - [ ] Added Listings Seeds
-   - [ ] Verify database/objects appear in database
-   - [ ] Verify CRUD 
+   - [x] Add Migration: add_role_and_listing_references_to_user
+   - [x] Create table Listings
+   - [x] Added Listings Seeds
+   - [x] Verify database/objects appear in database
+   - [x] Verify CRUD 
    - [ ] Bonus:  Add validations
