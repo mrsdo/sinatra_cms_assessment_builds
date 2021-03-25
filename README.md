@@ -83,3 +83,7 @@ Details:  https://github.com/Marti-Dolce-Flatiron-School-Projects/sinatra_crm_as
    - [x] Verify database/objects appear in database
    - [x] Verify CRUD 
    - [ ] Bonus:  Add validations
+   
+ 5. Additional Features
+    - [x] Confirmation page for editing/deleting listings
+       ![localhost](docs/2021-03-25_06-22-37.png) 
