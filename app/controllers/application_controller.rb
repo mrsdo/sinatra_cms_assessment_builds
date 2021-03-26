@@ -2,7 +2,12 @@
 
 require './config/environment'
 
+# Application Controller
 class ApplicationController < Sinatra::Base
+  register Sinatra::ActiveRecordExtension
+  register Mysql2
+
+
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
@@ -21,8 +26,6 @@ class ApplicationController < Sinatra::Base
 
   get '/logout' do
     redirect_if_not_logged_in
-    # logout a user
-    # session.clear
     session.delete('user_id')
     redirect '/'
   end
@@ -38,9 +41,8 @@ class ApplicationController < Sinatra::Base
       !!current_user
     end
 
-
     def redirect_if_not_logged_in
-      redirect '/sessions/new' unless signed_in?
+      redirect '/sessions/new-user' unless signed_in?
     end
 
     def redirect_if_logged_in
