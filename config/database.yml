@@ -8,7 +8,7 @@ default: &default
 
 development:
   <<: *default
-  database: dev_sinatra_crm_assessment_030121_02
+  database: sinatra_crm_assessment_030121_02
 
 test:
   adapter: mysql2
