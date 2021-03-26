@@ -8,14 +8,14 @@ default: &default
 
 development:
   <<: *default
-  database: dev_sinatra_crm_assessment_030121_02
+  database: twenty45_development
 
 test:
   adapter: mysql2
-  database: test_sinatra_crm_assessment_030121_02
+  database: test_twenty45_development
   username: <%= ENV["USERNAME_KEY"] %>
   password: <%= ENV["PASSWORD_KEY"] %>
 
 production:
   <<: *default
-  database: sch_listings mydb
+  database: sch_twenty45_development mydb

@@ -13,13 +13,13 @@ class CreateListings < ActiveRecord::Migration[5.2]
       t.string :photo_2
       t.string :photo_3
       t.string :photo_4
-      t.integer :user_id # because listings belongs to a user
+      # t.integer :user_id # because listings belongs to a user
       # t.integer :hoa_id # because listings belongs to an hoa
       t.string :phone
       t.string :community
 
       t.timestamps null: false
     end
-    add_reference :users, :listings, foreign_key: true
+    # add_reference :users, :listings, foreign_key: true
   end
 end

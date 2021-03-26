@@ -10,6 +10,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
 
       t.timestamps null: false
     end
-    add_reference :Listing, :users, foreign_key: true
+    # add_reference :Listing, :users, foreign_key: true
   end
 end

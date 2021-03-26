@@ -14,9 +14,9 @@ configure :development do
   ActiveRecord::Base.establish_connection(
     adapter: 'mysql2',
     encoding: 'utf8',
-    database: 'dev_sinatra_crm_assessment_030121_02',
+    database: 'twenty45_development',
     username: 'root',
-    password: 'palo5non!'
+    password: 'Palo5non!'
   )
 end
 
