@@ -1,0 +1,7 @@
+"id"	"fname"	"lname"	"email"	"username"	"password_digest"	"created_at"	"updated_at"	"roles_id"
+"5"	"Neeson"	"Grant"	"new@email.com"	"ngrant"	"$2a$12$n/CEaft4d0qmEUgxnNAPFurBBgw4PI9eVrv/rUewwlTFPn7NY/Yuq"	"27/3/2021 00:19:11.027498"	"27/3/2021 00:19:11.027498"	"7"
+"6"	"Salma"	"Tine"	"salma@hotmail.com"	"stine"	"$2a$12$n/CEaft4d0qmEUgxnNAPFurBBgw4PI9eVrv/rUewwlTFPn7NY/Yuq"	"27/3/2021 00:19:11.044384"	"27/3/2021 00:19:11.044384"	"6"
+"7"	"Rend"	"Miller"	"hend@anything.com"	"rmiller"	"$2a$12$n/CEaft4d0qmEUgxnNAPFurBBgw4PI9eVrv/rUewwlTFPn7NY/Yuq"	"27/3/2021 00:19:11.047838"	"27/3/2021 00:19:11.047838"	"5"
+"8"	"Eddie"	"Opara"	"eopara@gmail.com"	"eopara"	"$2a$12$n/CEaft4d0qmEUgxnNAPFurBBgw4PI9eVrv/rUewwlTFPn7NY/Yuq"	"27/3/2021 00:19:11.051428"	"27/3/2021 00:19:11.051428"	"4"
+"9"	"Ima"	"User"	"imauser_new@gmail.com"	"imauser"	"$2a$12$8BmStYBa.zaOoVfTMAZjTOejiELLzyAqSIB7a54Cfh6dGpSScUj7G"	"27/3/2021 01:27:42.39181"	"27/3/2021 01:38:48.164118"	
+"10"	"Ima"	"User1"	"imauser1@gmail.com"	"imauser1"	"$2a$12$y/RKdE/mKxYrK6rHNEn.PuRKS/xuRtbI3o1k5HmUjAhvpZTu7AmWy"	"27/3/2021 14:52:24.937714"	"27/3/2021 14:52:24.937714"	

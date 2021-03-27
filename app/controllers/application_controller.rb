@@ -40,11 +40,11 @@ class ApplicationController < Sinatra::Base
 
 
     def redirect_if_not_logged_in
-      redirect '/sessions/new' unless signed_in?
+      redirect '/users/signin.html' unless signed_in?
     end
 
     def redirect_if_logged_in
-      redirect '/listings' if signed_in?
+      redirect "/users/#{@user.id}" if signed_in?
     end
   end
 end

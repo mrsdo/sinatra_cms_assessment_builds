@@ -1,88 +1,123 @@
-# frozen_string_literal: true
-
-# Listings
 class ListingsController < ApplicationController
 
-
-  # READ all listings
-  get '/listings' do
-
-    redirect_if_not_logged_in
-    @listings = current_user.listings
-    # @user = User.find(session[:user_id])
-    # @listings = Listing.where(user_id: current_user)
-    erb :'/users/index'
+  # GET: NOT LOGGED IN
+  get "/listings/view-listings" do
+    @listing = Listing.all
+    erb :"/listings/view-listings"
   end
 
-  get '/listings/view-listings' do
-    @listings = Listing.all
-    erb :'listings/view-listings'
+  # GET: /listings asking the server for the data in listing -- done
+  get "/listings" do
+    # if the user is signed in?
+    if signed_in? == true
+      # then find the user who's session params = to user_id
+      @user = User.find(session[:user_id])
+      # finally disply the listing list where user_id = to current user
+
+      @listings = Listing.where(user_id: current_user)
+      erb :"/users/#{@user.id}"
+
+    else
+
+      redirect "/signin"
+    end
   end
 
-  # CREATE new listing (render form)
-  get '/listings/new' do
-    erb :'listings/new.html'
+  # GET: /listings/new -- done
+  get "/listings/new" do
+    if signed_in?
+      @user = User.find_by(id: session[:user_id])
+      erb :"/listings/new"
+    else
+      redirect "/signin"
+    end
   end
 
-  # READ 1 listing
+  # POST: /listings --- done
+  post "/listings" do
+    # raise params.inspect
+    #params {"name"=>"raise params inspect"}
+    if signed_in?
+      @user = User.find(session[:user_id])
+      # binding.pry
+
+      if params[:name].empty?
+        puts 'Please complete all fields'
+        redirect "/signup"
+      else
+        @user = User.find_by(:id => session[:user_id])
+        # create new instance of listing
+        # @listing = Listing.new
+        @listing = Listing.create(:name => params[:name], :tag_name => params[:tag_name], :asking_price => params[:asking_price], :bedrooms => params[:bedrooms], :status => params[:status], :bathrooms => params[:bathrooms], :first_listed => params[:first_listed], :sqft => params[:sqft], :summary.to_s => params[:summary.to_s])
+        # @listing.user_id = @user.id
+        @listing.save
+        redirect "/listings"
+      end
+    else
+      redirect "/signin"
+    end
+  end
   get '/listings/:id' do
-    redirect_if_not_logged_in
-    redirect_if_not_authorized
-
-    erb :'listings/show.html'
-  end
-
-  # CREATE new listing (save in db)
-  # create
-  post '/listings' do
-    listing = Listing.create(params["listing"])
-    # listing = Listing.new(params["listing"])
-    if listing.save
-      redirect to "/listings/#{listing.id}"
+    if signed_in?
+      # @user = User.find_by(id: session[:user_id])
+      @listing = Listing.find(params[:id])
+      if @listing && @listing.user == current_user
+        # binding.pry
+        erb :"listings/#{@listing.id}/edit"
+      else
+        redirect "/signin"
+      end
     else
-      redirect "listings/new.html"
+      redirect '/signin'
     end
-
   end
+  # GET: /listings/5
+  get "/listings/:id/edit" do
+    @user = User.find_by(id: session[:user_id])
+    @listing = Listing.find(params[:id])
+    if @listing && @listing.user_id == current_user
 
-  # UPDATE 1 listing (render form)
-  get '/listings/:id/edit' do
-    redirect_if_not_logged_in
-    redirect_if_not_authorized
-
-    erb :'listings/edit.html'
+      # there is no relation between this line and line 37 it just bcz of redirecting due to design
+      # those two values are the end up equals
+      erb :"/listings/edit"
+    else
+      redirect "/listings/show"
+    end
   end
-
-  # UPDATE 1 listing (save in db)
   patch '/listings/:id' do
-    redirect_if_not_logged_in
-    redirect_if_not_authorized
+    if signed_in?
+      if params[:name].empty?
+        redirect "/listings/#{params[:id]}/edit"
+      else
+        @listing = Listing.find_by_id(params[:id])
+        if @listing && @listing.user == current_user
+          @listing.update(params[:listing])
+          @listing.save
+          # if @listing.update(:name => params[:name])
+          # if @listing.update(:name => params[:name], :tag_name => params[:tag_name], :asking_price => params[:asking_price], :bedrooms => params[:bedrooms], :status => params[:status], :bathrooms => params[:bathrooms], :first_listed => params[:first_listed], :sqft => params[:sqft], :summary.to_s => params[:summary.to_s])
+          redirect to "/listings/#{@listing.id}"
+        else
+          redirect to "/listings/#{@listing.id}/edit"
+        end
 
-    if @listing.update(params["listing"])
-      redirect "listings/#{@listing.id}"
+        redirect to '/listings'
+      end
     else
-      redirect "listings/#{@listing.id}/edit"
+      redirect '/signin'
     end
   end
 
-  # DELETE 1 listing
-  delete "/listings/:id" do
-    redirect_if_not_logged_in
-    redirect_if_not_authorized
-
-    @listing.destroy
-
-    redirect "/listings"
-  end
-
-  private
-
-  def redirect_if_not_authorized
-    @listing = Listing.find_by_id(params[:id])
-    if @listing.user_id != session["user_id"]
-      redirect "/listings"
+  delete '/listings/:id/delete' do
+    if signed_in?
+      @user = User.find_by(id: session[:user_id]) if session[:user_id]
+      @listing = Listing.find_by_id(params[:id])
+      # binding.pry
+      if @listing && @listing.user == current_user
+        @listing.destroy
+        redirect '/listings'
+      end
+    else
+      redirect to '/signin'
     end
   end
-
-
 end

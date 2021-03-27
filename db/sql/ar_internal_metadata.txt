@@ -1,0 +1,3 @@
+"key"	"value"	"created_at"	"updated_at"
+"environment"	"development"	"27/3/2021 02:01:58.972825"	"27/3/2021 02:01:58.975879"
+"schema_sha1"	"f12aee58b5cf02ee401e4c4bfba5e21e007c5a9b"	"27/3/2021 02:01:58.978006"	"27/3/2021 02:01:58.978006"

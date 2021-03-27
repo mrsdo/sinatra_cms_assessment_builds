@@ -35,8 +35,7 @@
       <% if signed_in? %>
         <li><a href="/users/<%= current_user.id %>">ACCOUNT</a></li>
         <li><a href="/listings/new">NEW LISTINGS</a></li>
-        <li><a href="/listings">LISTINGS</a></li>
-        <li><a href="/hoas">HOA's</a></li>
+        <li><a href="/listings">MY LISTINGS</a></li>
         <li><a href="/signout">[ LOGOUT ]</a></li>
       <% else %>
         <li><a href="/listings/view-listings">LISTINGS</a></li>
@@ -73,7 +72,6 @@
 
 <!-- Start Dynamic content -->
   <section style="background-color: #f7fafa; padding:15px;">
-
 <%= yield %>
   </section>
 <!-- End Dynamic content -->
