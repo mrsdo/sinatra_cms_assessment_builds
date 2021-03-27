@@ -1,34 +1,54 @@
-<h1>Show All HOA's</h1>
+<h1>Show All HOAs</h1>
 <section id="page">
+  <table class="table-striped">
+    <thead>
+    <% if signed_in? %>
+      <th>
 
-    <% @hoas.each do |hoas| %>
-      <ul>
-        <li><%= hoas.id.to_s %></li>
-        <li><%= hoas.contact %></li>
-        <li><%= hoas.address.to_s %>,<%= hoas.city.to_s %>
-          <%= hoas.state.to_s %>  <%= hoas.zipcode.to_s %></li>
-        <li><%= hoas.phone.to_s %></li>
-        <li><%= hoas.email.to_s %></li>
-        <li><a href="<%= hoas.website.to_s %>" target="_blank" >Website</a></li>
-        <li><a href="/hoas/<%= hoas.id %>">Listing Details</a></li>
-        <li><a href="/hoas/<%= hoas.id %>/edit">Edit</a></li>
-        <li> <a href="<%= @delete %>/hoas/<%= hoas.id %>">Delete</a></li>
-      </ul>
+
+        <a href="/hoas/new"><h3>Create New HOA</h3></a>
+
+      </th>
+
+      <th>Edit</th>
+      <th>Delete</th>
+      <% else %>
+
+      <tr>
+        <th>HOA</th>
+        <th>Details</th>
+
+    </tr>
     <% end %>
-  <nav>
-    <ol>
-      <li><a href="/hoas">Home</a></li>
-      <li><a href="/hoas/new">New</a></li>
+    </thead>
 
-    </ol>
-  </nav>
+    <tbody>
+    <% @hoas.each do |hoa| %>
+      <tr>
+        <% if signed_in? %>
+
+        <td><%= hoa.address.to_s %><br><%= hoa.city.to_s %>
+          <%= hoa.state.to_s %>  <%= hoa.zipcode.to_s %><br>
+          <%= hoa.phone.to_s %><br>
+          <%= hoa.email.to_s %><br>
+          <a href="<%= hoa.website.to_s %>" target="_blank" >Website</a>
+        </td>
+
+        <td><a href="/hoas/<%= hoa.id %>/edit">Edit</a></td>
+        <td> <a href="<%= @delete %>/hoas/<%= hoa.id %>">Delete</a></td>
+        <% else %>
+
+          <td><%= hoa.address.to_s %><br><%= hoa.city.to_s %>
+            <%= hoa.state.to_s %>  <%= hoa.zipcode.to_s %><br>
+            <%= hoa.phone.to_s %><br>
+            <%= hoa.email.to_s %><br>
+            <a href="<%= hoa.website.to_s %>" target="_blank" >Website</a>
+          <td><a href="/hoas/<%= hoa.id %>">Listing Details</a></td>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
 </section>
-<!--'contact' => Faker::Name.first_name " " + " " Faker::Name.last_name,-->
-<!--'phone' => Faker::PhoneNumber.cell_phone,-->
-<!--'email' => Faker::Internet.email,-->
-<!--'community' => Faker::Address.community,-->
-<!--'address' => Faker::Address.street_address,-->
-<!--'city' => Faker::Address.city,-->
-<!--'state'=> Faker::Address.state,-->
-<!--'zipcode' => Faker::Address.zip,-->
-<!--'website' => Faker::Internet.url,-->

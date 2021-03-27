@@ -14,7 +14,7 @@ class HoasController < ApplicationController
   end
 
 
-  # create new movie (saved to database)
+  # create new hoa (saved to database)
   post '/hoas' do
     # hoa = Hoa.new(params)
     hoa = Hoa.create(:contact => params[:contact], :phone => params[:phone])
@@ -49,7 +49,10 @@ class HoasController < ApplicationController
   # update
   patch '/hoas/:id' do
     @hoa = Hoa.find(params[:id])
-    @hoa.update(params[:hoas])
+    @hoa.update(:contact => params[:contact], :phone => params[:phone],
+                :email => params[:email], :community => params[:community],
+                :address => params[:address], :city => params[:city],
+                :state => params[:zipcode], :website => params[:website])
     redirect to "/hoas/#{@hoa.id}"
   end
 
