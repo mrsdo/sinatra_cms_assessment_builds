@@ -1,14 +1,16 @@
 # Specifications for the Sinatra Assessment
 
-- [ ] Use Sinatra to build the app - controllers inherit from Sinatra::Base and define HTTP interface for the app;
+- [x] Use Sinatra to build the app - controllers inherit from Sinatra::Base and define HTTP interface for the app;
   - Separate directories for models, controllers, views (with separation of concerns)
-- [ ] Use ActiveRecord for storing information in a database
+- [x] Use ActiveRecord for storing information in a database
   - used ActiveRecord to make queries to a Mysql database
-- [ ] Include more than one model class (e.g. User, Listings)
+- [x] Include more than one model class (e.g. User, Listings)
   - User, Listings, wishlist: Manager
-- [ ] Include at least one has_many relationship on your User model (e.g. User has_many Posts)
-  - User has_many Listings
-- [ ] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User)
+- [x] Include at least one has_many relationship on your User model (e.g. User has_many Posts)
+  - User has_many Listings, User belongs_to HOA, User belongs_to Listing, User belongs to Role, User has_many Listings
+  - HOA has many users, HOA has_many Listings
+  - Listings has many users, Listings belongs_to HOA, Listing has many users
+- [x] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User)
   - Listing(s) belongs_to user
 - [ ] Include user accounts with unique login attribute (username or email)
   - Validate unique user login attributes by ensuring that there is no an existing user account with the entered username (prevent duplicates)
@@ -37,9 +39,9 @@
 http://crm.twenty9signals.com:3000
 
 Confirm
-- [ ] You have a large number of small Git commits
+- [x] You have a large number of small Git commits
   - every 15-20 lines
-- [ ] Your commit messages are meaningful
+- [x] Your commit messages are meaningful
   - explain what changes and where
-- [ ] You made the changes in a commit that relate to the commit message
-- [ ] You don't include changes in a commit that aren't related to the commit message
+- [x] You made the changes in a commit that relate to the commit message
+- [x] You don't include changes in a commit that aren't related to the commit message
