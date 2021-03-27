@@ -11,7 +11,7 @@ class ListingsController < ApplicationController
     @listings = current_user.listings
     # @user = User.find(session[:user_id])
     # @listings = Listing.where(user_id: current_user)
-    erb :'listings/index.html'
+    erb :'/users/index'
   end
 
   get '/listings/view-listings' do
