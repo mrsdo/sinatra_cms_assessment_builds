@@ -1,6 +1,7 @@
 class Hoa < ActiveRecord::Base
   has_many :listings
   # hoas reader returns all hoas in array
+
   # hoas<< save to database
   # hoas.delete(hoa obj)
   # hoas.destroy(hoa obj)

@@ -36,10 +36,11 @@
         <li><a href="/users/<%= current_user.id %>">VIEW PROFILE</a></li>
         <li><a href="/listings/new">NEW LISTINGS</a></li>
         <li><a href="/listings">MY LISTINGS</a></li>
+        <li><a href="/hoas">My HOA's</a></li>
         <li><a href="/signout">[ LOGOUT ]</a></li>
       <% else %>
         <li><a href="/listings/view-listings">LISTINGS</a></li>
-        <li><a href="/agents">AGENTS</a></li>
+        <li><a href="/hoas">HOA's</a></li>
         <li><a href="/signup">SIGNUP</a></li>
         <li><a href="/signin">LOGIN</a></li>
       <% end %>
@@ -72,6 +73,9 @@
 
 <!-- Start Dynamic content -->
   <section style="background-color: #f7fafa; padding:15px;">
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert alert-info") %>
+    <% end %>
 <%= yield %>
   </section>
 <!-- End Dynamic content -->

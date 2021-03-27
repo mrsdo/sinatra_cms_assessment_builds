@@ -21,7 +21,6 @@ class ListingsController < ApplicationController
 
   # CREATE new listing (render form)
   get '/listings/new' do
-    redirect_if_not_logged_in
     erb :'listings/new.html'
   end
 

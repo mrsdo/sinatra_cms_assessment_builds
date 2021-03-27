@@ -10,4 +10,5 @@ run ApplicationController
 use RoleController
 use UsersController
 use ListingsController
+use HoasController
 
