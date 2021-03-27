@@ -10,11 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_18_080729) do
+ActiveRecord::Schema.define(version: 2021_03_27_003933) do
+
+  create_table "hoas", charset: "utf8", force: :cascade do |t|
+    t.string "contact"
+    t.string "phone"
+    t.string "email"
+    t.string "community"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.integer "zipcode"
+    t.string "website"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "listings", charset: "utf8", force: :cascade do |t|
     t.string "address"
-    t.string "hoa"
     t.string "status"
     t.date "first_listed"
     t.string "bedrooms"
@@ -30,6 +43,10 @@ ActiveRecord::Schema.define(version: 2021_03_18_080729) do
     t.string "community"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "hoa_id"
+    t.bigint "users_id"
+    t.index ["hoa_id"], name: "index_listings_on_hoa_id"
+    t.index ["users_id"], name: "index_listings_on_users_id"
   end
 
   create_table "roles", charset: "utf8", force: :cascade do |t|
@@ -46,6 +63,11 @@ ActiveRecord::Schema.define(version: 2021_03_18_080729) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "roles_id"
+    t.index ["roles_id"], name: "index_users_on_roles_id"
   end
 
+  add_foreign_key "listings", "hoas"
+  add_foreign_key "listings", "users", column: "users_id"
+  add_foreign_key "users", "roles", column: "roles_id"
 end

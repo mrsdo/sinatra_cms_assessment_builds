@@ -9,5 +9,5 @@ use Rack::MethodOverride
 run ApplicationController
 use RoleController
 use UsersController
-# use ListingsController
+use ListingsController
 

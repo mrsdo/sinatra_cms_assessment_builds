@@ -1,0 +1,34 @@
+<h1>Show All HOA's</h1>
+<section id="page">
+
+    <% @hoas.each do |hoas| %>
+      <ul>
+        <li><%= hoas.id.to_s %></li>
+        <li><%= hoas.contact %></li>
+        <li><%= hoas.address.to_s %>,<%= hoas.city.to_s %>
+          <%= hoas.state.to_s %>  <%= hoas.zipcode.to_s %></li>
+        <li><%= hoas.phone.to_s %></li>
+        <li><%= hoas.email.to_s %></li>
+        <li><a href="<%= hoas.website.to_s %>" target="_blank" >Website</a></li>
+        <li><a href="/hoas/<%= hoas.id %>">Listing Details</a></li>
+        <li><a href="/hoas/<%= hoas.id %>/edit">Edit</a></li>
+        <li> <a href="<%= @delete %>/hoas/<%= hoas.id %>">Delete</a></li>
+      </ul>
+    <% end %>
+  <nav>
+    <ol>
+      <li><a href="/hoas">Home</a></li>
+      <li><a href="/hoas/new">New</a></li>
+
+    </ol>
+  </nav>
+</section>
+<!--'contact' => Faker::Name.first_name " " + " " Faker::Name.last_name,-->
+<!--'phone' => Faker::PhoneNumber.cell_phone,-->
+<!--'email' => Faker::Internet.email,-->
+<!--'community' => Faker::Address.community,-->
+<!--'address' => Faker::Address.street_address,-->
+<!--'city' => Faker::Address.city,-->
+<!--'state'=> Faker::Address.state,-->
+<!--'zipcode' => Faker::Address.zip,-->
+<!--'website' => Faker::Internet.url,-->

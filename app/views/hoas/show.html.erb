@@ -1,0 +1,43 @@
+<h1>Show Details HOA</h1>
+
+<section id="page">
+  <form class="form" action="/hoas" method="get">
+    <div for="hoa_contact" class="div-name">Contact</div>
+    <input type="text" id="hoa_contact" name="hoa[hoa_contact]" value="<%= @hoa.contact %>" readonly/><br>
+
+    <div for="hoa_contact" class="div-name">Phone</div>
+    <input type="text" id="hoa_phone" name="hoa[hoa_phone]" value="<%= @hoa.phone.to_s %>" readonly/><br>
+
+    <div for="hoa_address" class="div-name">Email</div>
+    <input type="text" id="hoa_email" name="hoa[hoa_email]" value="<%= @hoa.email.to_s %>" readonly/><br>
+
+
+    <div for="hoa_community" class="div-name">Community</div>
+    <input type="text" id="hoa_community" name="hoa[hoa_community]" value="<%= @hoa.community %>" readonly/><br>
+
+    <div for="hoa_address" class="div-name">Address</div>
+    <input type="text" id="hoa_address" name="hoa[hoa_address]" value="<%= @hoa.address %>" readonly/><br>
+
+    <div for="hoa_address" class="div-name">City</div>
+    <input type="text" id="hoa_city" name="hoa[hoa_city]" value="<%= @hoa.city.to_s %>" readonly/><br>
+
+    <div for="hoa_address" class="div-name">State</div>
+    <input type="text" id="hoa_state" name="hoa[hoa_state]" value="<%= @hoa.state.to_s %>" readonly/><br>
+
+    <div for="hoa_address" class="div-name">Zip</div>
+    <input type="text" id="hoa_zipcode" name="hoa[hoa_zipcodes]" value="<%= @hoa.zipcode.to_s %>" readonly/><br>
+
+    <div for="hoa_website" class="div-name">Website</div>
+    <input type="text" id="hoa_website" name="hoa[hoa_website]" value="<%= @hoa.website.to_s %>" readonly/><br>
+
+    <input type="submit" value="Confirm" class="button" />
+  </form>
+
+  <nav>
+    <ol>
+      <li><a href="/hoas">Hoas Home</a></li>
+      <li><a href="/hoas/new">New</a></li>
+
+    </ol>
+  </nav>
+</section>
