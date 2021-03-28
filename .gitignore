@@ -11,3 +11,5 @@ Gemfile.lock
 
 app/.DS_Store
 .DS_Store
+*.pid
+.env

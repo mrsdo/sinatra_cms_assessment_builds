@@ -16,12 +16,8 @@ configure :development do
     encoding: 'utf8',
     database: 'twenty45_development',
     username: 'root',
-    password: 'Palo5non!'
+    password: 'palo5non!'
   )
-end
-
-configure :production do
-  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'mysql://localhost/mydb')
 end
 
 require_all 'app'
