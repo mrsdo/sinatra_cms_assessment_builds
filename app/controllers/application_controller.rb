@@ -4,10 +4,10 @@ require './config/environment'
 
 class ApplicationController < Sinatra::Base
   configure do
-    set :views, 'app/views'
     set :public_folder, 'public'
+    set :views, 'app/views'
     enable :sessions
-    set :session_secret, ENV['SESSION_SECRET']
+    set :session_secret, 'ToDo_secret'
   end
 
   get '/' do
@@ -40,11 +40,11 @@ class ApplicationController < Sinatra::Base
 
 
     def redirect_if_not_logged_in
-      redirect '/users/signin.html' unless signed_in?
+      redirect '/sessions/new' unless signed_in?
     end
 
     def redirect_if_logged_in
-      redirect "/users/#{@user.id}" if signed_in?
+      redirect '/listings' if signed_in?
     end
   end
 end

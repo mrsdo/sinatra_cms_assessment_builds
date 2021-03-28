@@ -4,22 +4,22 @@ class UsersController < ApplicationController
     if signed_in?
 
       @user = User.find(session[:user_id])
-
+      
       erb :"users/show.html"
     else
       redirect "/signin"
     end
   end
-
+  
   get '/users/:id' do
     if signed_in?
       @user = User.find(params[:id])
-      erb :"/users/#{@user.id}/"
+      erb :'/users/show.html'
     else
       redirect '/signin'
     end
   end
-
+  
   # GET: /let the user to go for the sign-in page --done
   get "/signin" do
     if signed_in?
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
       redirect "/signup"
     end
   end
-
+  
   #POST:/send the signup info to the server and let the user to create account
   post "/signup" do
     # if one of the entry field is empty direct to the signup page
@@ -67,7 +67,7 @@ class UsersController < ApplicationController
       redirect "/users/show"
     end
   end
-
+  
   get "/signout" do
     #if the user is logged in then clear the session and redirect to the /signin page
     #else redirect to the /index page
@@ -91,7 +91,7 @@ class UsersController < ApplicationController
       redirect "/signin"
     end
   end
-
+  
   patch '/users/:id' do
     # binding.pry
     if signed_in?

@@ -15,7 +15,8 @@ class ListingsController < ApplicationController
       # finally disply the listing list where user_id = to current user
 
       @listings = Listing.where(user_id: current_user)
-      erb :"/users/#{@user.id}"
+      # binding.pry
+      erb :"listings/show"
 
     else
 

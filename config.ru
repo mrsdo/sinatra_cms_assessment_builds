@@ -4,7 +4,7 @@ require './config/environment'
 
 use Rack::MethodOverride
 run ApplicationController
-use RoleController
+# use RoleController
 use UsersController
 use ListingsController
 use HoasController
