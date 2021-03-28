@@ -7,11 +7,12 @@ class UsersController < ApplicationController
       # Display the listings where user_id = to current user
 
 
-        erb :"users/show.html"
+      erb :"users/show.html"
     else
       redirect "/signin"
     end
   end
+
   get '/users/:id' do
     if signed_in?
       @user = User.find(params[:id])
@@ -64,7 +65,7 @@ class UsersController < ApplicationController
 
       @user.save
       session[:user_id] = @user.id
-      redirect "/users/show"
+      redirect "/users/#{@user.id}"
     end
   end
   get "/signout" do
@@ -83,9 +84,9 @@ class UsersController < ApplicationController
     @user = User.find_by(id: session[:user_id])
     if @user
 
-    # there is no relation between this line and line 37 it just bcz of redirecting due to design
-    # those two values are the end up equals
-    erb :"/users/edit.html"
+      # there is no relation between this line and line 37 it just bcz of redirecting due to design
+      # those two values are the end up equals
+      erb :"/users/edit.html"
     else
       redirect "/signin"
     end
@@ -101,7 +102,7 @@ class UsersController < ApplicationController
           if @user.update(:fname => params[:fname], :lname => params[:lname], :username => params[:username], :email => params[:email])
             redirect to "/users/#{@user.id}"
           else
-          redirect to "/users/#{@user.id}/edit"
+            redirect to "/users/#{@user.id}/edit"
           end
         else
           redirect to '/users'
@@ -112,3 +113,4 @@ class UsersController < ApplicationController
     end
   end
 end
+

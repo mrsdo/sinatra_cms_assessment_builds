@@ -46,5 +46,6 @@ class ApplicationController < Sinatra::Base
     def redirect_if_logged_in
       redirect '/listings' if signed_in?
     end
+
   end
 end
