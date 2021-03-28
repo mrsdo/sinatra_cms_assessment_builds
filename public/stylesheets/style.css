@@ -58,8 +58,7 @@ nav ul li {
     font-weight: bold;
     transition: all 0.3s linear;
 }
-
-#page nav ol li {
+#page nav ol li{
     float: left;
     color: #FFFFFF;
     font-size: 14px;
@@ -70,12 +69,10 @@ nav ul li {
     transition: all 0.3s linear;
 
 }
-
-#page nav a:link, #page nav a:active, #page nav a:visited {
+#page nav a:link, #page nav a:active, #page nav a:visited{
     color: #D85751;
     text-decoration: none;
 }
-
 ul li a {
     color: #FFFFFF;
     text-decoration: none;
@@ -258,7 +255,7 @@ footer .footer_column p {
     margin-right: 20px;
 }
 
-div.button, input.button {
+div.button, input.button{
     width: 200px;
     margin: 40px auto auto;
     padding: 20px 10px;
@@ -273,20 +270,19 @@ div.button, input.button {
     transition: all 0.3s linear;
 }
 
-div.button:hover, input.button:hover {
+div.button:hover, input.button:hover{
     background-color: #FEFEFE;
     color: #C4C4C4;
     cursor: pointer;
 }
-
 div.button a, div.button a:active, div.button a:visited {
-    color: #FFFFFF;
+    color:#FFFFFF;
     text-decoration: none;
 
 }
 div.button a:hover {
     text-decoration: none;
-    color: #818181;
+    color:#818181;
 }
 .copyright {
     text-align: center;

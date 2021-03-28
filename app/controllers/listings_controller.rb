@@ -8,9 +8,10 @@ class ListingsController < ApplicationController
   get '/listings' do
 
     redirect_if_not_logged_in
-    @listings = current_user.listings
+    # @listings = current_user.listings
     # @user = User.find(session[:user_id])
     # @listings = Listing.where(user_id: current_user)
+    @listings = Listing.All
     erb :'listings/index.html'
   end
 

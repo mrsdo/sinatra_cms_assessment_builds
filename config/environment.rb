@@ -1,27 +1,12 @@
-# frozen_string_literal: true
-
-ENV['SINATRA_ENV'] ||= 'development'
-require 'bundler/setup'
-require 'mysql2'
-require 'dotenv'
-Dotenv.load
+ENV['SINATRA_ENV'] ||= "development"
+require "bundler/setup"
+require 'sinatra'
+Bundler.require
+require 'dotenv/load'
 
 Bundler.require(:default, ENV['SINATRA_ENV'])
-
-ActiveRecord::Base.logger = Logger.new($stdout)
-
-configure :development do
-  ActiveRecord::Base.establish_connection(
-    adapter: 'mysql2',
-    encoding: 'utf8',
-    database: 'dev_sinatra_crm_assessment_030121_02',
-    username: 'root',
-    password: 'palo5non!'
-  )
-end
-
-configure :production do
-  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'mysql://localhost/mydb')
-end
-
 require_all 'app'
+
+# adds SQL query print outs to our terminal
+# as we navigate our application in the browser
+ActiveRecord::Base.logger = Logger.new(STDOUT)
