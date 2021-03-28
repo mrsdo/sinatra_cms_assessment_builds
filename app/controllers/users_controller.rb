@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     if signed_in?
       redirect '/listings'
     else
-      erb :"/users/new.html"
+      erb :"/sessions/new.html"
     end
   end
 
