@@ -1,3 +1,16 @@
+# mysql.database.yml
+
+#
+# Install the MYSQL driver
+#   gem install mysql2
+#
+# Ensure the MySQL gem is defined in your Gemfile
+#   gem 'mysql2'
+#
+# And be sure to use new-style password hashing:
+#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
+
+
 ## MySQL2
 default: &default
   adapter: mysql2
@@ -7,15 +20,24 @@ default: &default
   password: <%= ENV["PASSWORD_KEY"] %>
 
 development:
-  <<: *default
-  database: sinatra_crm_assessment_030121_02
+  adapter: mysql2
+  encoding: utf8
+  host: localhost
+  database: rc09_sinatra_crm_assessment
+  pool: 5
+  username: root
+  password: Palo5non!
 
 test:
   adapter: mysql2
-  database: test_sinatra_crm_assessment_030121_02
-  username: <%= ENV["USERNAME_KEY"] %>
-  password: <%= ENV["PASSWORD_KEY"] %>
+  encoding: utf8
+  host: localhost
+  database: test_rc09_sinatra_crm_assessment
+  pool: 5
+  username: root
+  password: Palo5non!
 
 production:
   <<: *default
-  database: sch_listings mydb
+
+

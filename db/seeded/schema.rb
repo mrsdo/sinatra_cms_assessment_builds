@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_18_060104) do
+ActiveRecord::Schema.define(version: 2020_12_24_162628) do
 
   create_table "listings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "address"
+    t.string "name"
+    t.string "tag_name"
     t.string "status"
     t.date "first_listed"
     t.string "bedrooms"
@@ -38,7 +39,6 @@ ActiveRecord::Schema.define(version: 2021_03_18_060104) do
     t.string "email"
     t.string "username"
     t.string "password_digest"
-    t.integer "listing_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

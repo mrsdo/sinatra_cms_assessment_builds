@@ -111,13 +111,4 @@ class UsersController < ApplicationController
       redirect '/signin'
     end
   end
-  # patch "/users/:id" do
-  #   # raise params.inspect
-  #   # fins the todo with the specific id
-  #   @user = User.find(params[:id])
-  #   # binding.pry
-  #   @user.update(name: params[:name], email: params[:email])
-  #   # binding.pry
-  #     redirect "/users/#{@user.id}"
-  # end
 end

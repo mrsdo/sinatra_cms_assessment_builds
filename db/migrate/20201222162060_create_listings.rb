@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Create Listings Table
 class CreateListings < ActiveRecord::Migration[5.2]
   def change
     create_table :listings do |t|
@@ -20,6 +23,6 @@ class CreateListings < ActiveRecord::Migration[5.2]
 
       t.timestamps null: false
     end
-    add_reference :users, :listings, foreign_key: true
+    # add_reference :users, :listings, foreign_key: true
   end
 end
