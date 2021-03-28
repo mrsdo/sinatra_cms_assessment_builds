@@ -1,50 +1,38 @@
-# frozen_string_literal: true
-
-require './config/environment'
-
 class ApplicationController < Sinatra::Base
-  configure do
-    set :public_folder, 'public'
-    set :views, 'app/views'
-    enable :sessions
-    set :session_secret, 'ToDo_secret'
-  end
-
-  get '/' do
-    erb :welcome
-  end
-
-  get '/search' do
-    @listings = Listing.find_by(address: params['address'])
-    erb :results
-  end
-
-  get '/logout' do
-    redirect_if_not_logged_in
-    # logout a user
-    # session.clear
-    session.delete('user_id')
-    redirect '/'
-  end
-
-  helpers do
-    def current_user
-      # memoization
-      @current_user ||= User.find_by_id(session['user_id'])
-
+    # set :views, Proc.new { File.join(root, "../views") }
+    
+    configure do
+        set :views, 'app/views'
+        set :public_folder, 'public'
+        enable :sessions
+        set :session_secret, ENV['SESSION_SECRET']
     end
 
-    def signed_in?
-      !!current_user
+    get '/' do
+        erb :search
     end
 
-
-    def redirect_if_not_logged_in
-      redirect '/sessions/new' unless signed_in?
+    get '/search' do
+       @movie = Movie.find_by(title: params["title"])
+       erb :results
     end
 
-    def redirect_if_logged_in
-      redirect '/listings' if signed_in?
+    helpers do
+        def current_user
+            # memoization
+            @current_user ||= User.find_by_id(session["user_id"])
+        end
+
+        def logged_in?
+            !!current_user
+        end
+
+        def redirect_if_not_logged_in
+            redirect "/login" if !logged_in?
+        end
+
+        def redirect_if_logged_in
+            redirect "/movie" if logged_in?
+        end
     end
-  end
 end

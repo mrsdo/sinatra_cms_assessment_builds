@@ -15,12 +15,12 @@ class SessionsController < ApplicationController
     post '/login' do
         redirect_if_logged_in
         # take data find User
-        @user = User.find_by(email: params["user"]["email"])
+        user = User.find_by(email: params["user"]["email"])
 
         # if that user is authenticate, log in, redirect /movies
-        if @user && @user.authenticate(params["users"]["password"])
+        if user && user.authenticate(params["user"]["password"])
             session["user_id"] = user.id
-            redirect "/listings/show.html"
+            redirect "/movies"
         # if user not valid, send back to /login
         else
             redirect "/login"
@@ -28,5 +28,11 @@ class SessionsController < ApplicationController
     end
 
     # logout DELETE (get/post)
-
+    delete '/logout' do
+        redirect_if_not_logged_in
+        # logout a user
+        # session.clear
+        session.delete("user_id")
+        redirect "/login"
+    end
 end
