@@ -41,13 +41,13 @@ class ApplicationController < Sinatra::Base
 
 
     def redirect_if_logged_in
-      flash[:errors] = ["You are already logged in."] if is_logged_in?
-      redirect "/games" if is_logged_in?
+      flash[:errors] = ["You are already logged in."] if signed_in?
+      redirect "/users/show.html" if signed_in?
     end
 
     def redirect_if_not_logged_in
-      flash[:errors] = ["You must be logged in."] unless is_logged_in?
-      redirect "/login" unless is_logged_in?
+      flash[:errors] = ["You must be logged in."] unless signed_in?
+      redirect "/users/signin.html" unless signed_in?
     end
   end
 

@@ -1,4 +1,30 @@
-Traceback (most recent call last):
-	2: from /Users/mj163/.rvm/gems/ruby-2.6.1/bin/rackup:23:in `<main>'
-	1: from /Users/mj163/.rvm/rubies/ruby-2.6.1/lib/ruby/site_ruby/2.6.0/rubygems.rb:303:in `activate_bin_path'
-/Users/mj163/.rvm/rubies/ruby-2.6.1/lib/ruby/site_ruby/2.6.0/rubygems.rb:284:in `find_spec_for_exe': can't find gem rack (>= 0.a) with executable rackup (Gem::GemNotFoundException)
+[2021-03-30 12:22:10] INFO  WEBrick 1.6.0
+[2021-03-30 12:22:10] INFO  ruby 2.7.2 (2020-10-01) [x86_64-darwin20]
+[2021-03-30 12:22:10] INFO  WEBrick::HTTPServer#start: pid=10601 port=9292
+D, [2021-03-30T12:22:14.356284 #10601] DEBUG -- :   User Load (1.3ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+D, [2021-03-30T12:22:14.365384 #10601] DEBUG -- :   User Load (4.8ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+127.0.0.1 - - [30/Mar/2021:12:22:14 -0400] "GET / HTTP/1.1" 200 5243 0.0753
+127.0.0.1 - - [30/Mar/2021:12:22:14 -0400] "GET /stylesheets/style.css HTTP/1.1" 200 13873 0.0194
+127.0.0.1 - - [30/Mar/2021:12:22:14 -0400] "GET /images/pattern.png HTTP/1.1" 200 2198 0.0038
+127.0.0.1 - - [30/Mar/2021:12:22:14 -0400] "GET /images/parallax.png HTTP/1.1" 200 37263 0.0085
+127.0.0.1 - - [30/Mar/2021:12:22:14 -0400] "GET /images/intro-pic.jpg HTTP/1.1" 200 90963 0.0178
+127.0.0.1 - - [30/Mar/2021:12:22:14 -0400] "GET /favicon.ico HTTP/1.1" 200 1150 0.0016
+D, [2021-03-30T12:22:16.459053 #10601] DEBUG -- :   User Load (0.2ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+D, [2021-03-30T12:22:16.461737 #10601] DEBUG -- :   User Load (0.3ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+D, [2021-03-30T12:22:16.462518 #10601] DEBUG -- :   User Load (0.2ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+127.0.0.1 - - [30/Mar/2021:12:22:16 -0400] "GET /signin HTTP/1.1" 200 3420 0.0058
+D, [2021-03-30T12:22:17.901243 #10601] DEBUG -- :   User Load (0.2ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+D, [2021-03-30T12:22:17.904796 #10601] DEBUG -- :   User Load (0.3ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+D, [2021-03-30T12:22:17.905373 #10601] DEBUG -- :   User Load (0.2ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+127.0.0.1 - - [30/Mar/2021:12:22:17 -0400] "GET /signup HTTP/1.1" 200 3695 0.0068
+D, [2021-03-30T12:22:19.073269 #10601] DEBUG -- :   Listing Load (0.4ms)  SELECT `listings`.* FROM `listings`
+D, [2021-03-30T12:22:19.125880 #10601] DEBUG -- :   User Load (0.3ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+D, [2021-03-30T12:22:19.126714 #10601] DEBUG -- :   User Load (0.2ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+127.0.0.1 - - [30/Mar/2021:12:22:19 -0400] "GET /listings/view-listings HTTP/1.1" 200 12764 0.0576
+D, [2021-03-30T12:22:20.747790 #10601] DEBUG -- :   User Load (0.4ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+D, [2021-03-30T12:22:20.748572 #10601] DEBUG -- :   User Load (0.2ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+127.0.0.1 - - [30/Mar/2021:12:22:20 -0400] "GET / HTTP/1.1" 200 5243 0.0066
+D, [2021-03-30T12:22:24.492800 #10601] DEBUG -- :   User Load (0.2ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+D, [2021-03-30T12:22:24.495190 #10601] DEBUG -- :   User Load (0.2ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+D, [2021-03-30T12:22:24.495715 #10601] DEBUG -- :   User Load (0.2ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
+127.0.0.1 - - [30/Mar/2021:12:22:24 -0400] "GET /signup HTTP/1.1" 200 3695 0.0049

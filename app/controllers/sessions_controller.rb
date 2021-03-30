@@ -5,14 +5,14 @@ class SessionsController < ApplicationController
 
 
     # login route form
-    get '/login' do
+    get '/signin' do
         redirect_if_logged_in
         # render form
         erb :'sessions/new'
     end
 
     # login route POST
-    post '/login' do
+    post '/signin' do
         redirect_if_logged_in
         # take data find User
         @user = User.find_by(email: params["user"]["email"])
@@ -23,10 +23,10 @@ class SessionsController < ApplicationController
             redirect "/listings/show.html"
         # if user not valid, send back to /login
         else
-            redirect "/login"
+            redirect "/signin"
         end
     end
 
-    # logout DELETE (get/post)
+    # logout DELETE (get/post) - Application Controller
 
 end
