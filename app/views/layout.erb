@@ -69,6 +69,12 @@
   </div>
 <!-- END Begin authentication check -->
 
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+    <% end %>
+
 <!-- Start Dynamic content -->
   <section style="background-color: #f7fafa; padding:15px;">
 <%= yield %>
