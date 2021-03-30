@@ -28,3 +28,14 @@ D, [2021-03-30T12:22:24.492800 #10601] DEBUG -- :   User Load (0.2ms)  SELECT `u
 D, [2021-03-30T12:22:24.495190 #10601] DEBUG -- :   User Load (0.2ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
 D, [2021-03-30T12:22:24.495715 #10601] DEBUG -- :   User Load (0.2ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` IS NULL LIMIT 1
 127.0.0.1 - - [30/Mar/2021:12:22:24 -0400] "GET /signup HTTP/1.1" 200 3695 0.0049
+D, [2021-03-30T12:24:33.303249 #10601] DEBUG -- :   TRANSACTION (0.1ms)  BEGIN
+D, [2021-03-30T12:24:33.303518 #10601] DEBUG -- :   User Exists? (0.2ms)  SELECT 1 AS one FROM `users` WHERE `users`.`username` = 'imauser' LIMIT 1
+D, [2021-03-30T12:24:33.304269 #10601] DEBUG -- :   User Create (0.2ms)  INSERT INTO `users` (`fname`, `lname`, `email`, `username`, `password_digest`, `created_at`, `updated_at`) VALUES ('Ima', 'User', 'imauser@gmail.com', 'imauser', '$2a$12$T1R7x.MoQUZpg05mQt7FKeiAg40b7pfChou/UA38H2gkjMH.UEaDS', '2021-03-30 16:24:33', '2021-03-30 16:24:33')
+D, [2021-03-30T12:24:33.346233 #10601] DEBUG -- :   TRANSACTION (41.7ms)  COMMIT
+D, [2021-03-30T12:24:33.347009 #10601] DEBUG -- :   TRANSACTION (0.1ms)  BEGIN
+D, [2021-03-30T12:24:33.347331 #10601] DEBUG -- :   User Exists? (0.2ms)  SELECT 1 AS one FROM `users` WHERE `users`.`username` = 'imauser' AND `users`.`id` != 5 LIMIT 1
+D, [2021-03-30T12:24:33.347742 #10601] DEBUG -- :   TRANSACTION (0.1ms)  COMMIT
+127.0.0.1 - - [30/Mar/2021:12:24:33 -0400] "POST /signup HTTP/1.1" 303 - 0.2482
+D, [2021-03-30T12:24:33.628372 #10601] DEBUG -- :   User Load (0.2ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+D, [2021-03-30T12:24:33.629000 #10601] DEBUG -- :   User Load (0.1ms)  SELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+127.0.0.1 - - [30/Mar/2021:12:24:33 -0400] "GET /users/5 HTTP/1.1" 200 3208 0.0051
