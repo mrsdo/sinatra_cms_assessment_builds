@@ -1,32 +1,38 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
-    ## handles changing my session ie. login/logout
+  get '/signup' do
+    redirect_if_not_signed_in
+    erb :'sessions/signup'
+  end
 
-    # IF LOGGED IN, DON'T SHOW LOGIN
-
-
-    # login route form
-    get '/signin' do
-        redirect_if_logged_in
-        # render form
-        erb :'sessions/new'
+  post '/signup' do
+    user = User.new(params[:user])
+    if user.save
+      session[:user_id] = user.id
+      redirect '/listings'
+    else
+      redirect '/signup'
     end
+  end
 
-    # login route POST
-    post '/signin' do
-        redirect_if_logged_in
-        # take data find User
-        @user = User.find_by(email: params["user"]["email"])
+  get '/signin' do
+    redirect_if_not_signed_in
+    erb :'sessions/signin'
+  end
 
-        # if that user is authenticate, log in, redirect /movies
-        if @user && @user.authenticate(params["users"]["password"])
-            session["user_id"] = user.id
-            redirect "/listings/show.html"
-        # if user not valid, send back to /login
-        else
-            redirect "/signin"
-        end
+  post '/signin' do
+    user = User.find_by_username(params[:user][:username])
+    if user&.authenticate(params[:user][:password])
+      session[:user_id] = user.id
+      redirect '/listings'
+    else
+      redirect '/signin'
     end
+  end
 
-    # logout DELETE (get/post) - Application Controller
-
+  get '/logout' do
+    session.clear
+    redirect '/signin'
+  end
 end

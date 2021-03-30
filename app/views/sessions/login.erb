@@ -1,0 +1,39 @@
+<h1>Sign-In: Listings Manager App</h1>
+<!--<section id="page">-->
+<!--<form class="form" action="/signin" method="POST">-->
+<!--  <div class="input-field">-->
+<!--    <input type="text" name="email" placeholder="Email:">-->
+<!--  </div>-->
+<!--<br />-->
+<!--  <div class="input-field">-->
+<!--    <input type="password" name="password" placeholder="Password:">-->
+<!--  </div>-->
+<!--<br />-->
+<!--  <input type="submit" value="Sign-In" class="button" />-->
+<!--</form>-->
+<!--</section>-->
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="errorExplanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :passenger_digest %><br />
+    <%= f.text_field :passenger_digest %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -22,8 +22,6 @@ class ApplicationController < Sinatra::Base
 
   get '/logout' do
     redirect_if_not_logged_in
-    # logout a user
-    # session.clear
     session.delete('user_id')
     redirect '/'
   end
@@ -40,12 +38,12 @@ class ApplicationController < Sinatra::Base
     end
 
 
-    def redirect_if_logged_in
+    def redirect_signed_in
       flash[:errors] = ["You are already logged in."] if signed_in?
       redirect "/users/show.html" if signed_in?
     end
 
-    def redirect_if_not_logged_in
+    def redirect_if_not_signed_in
       flash[:errors] = ["You must be logged in."] unless signed_in?
       redirect "/users/signin.html" unless signed_in?
     end
