@@ -8,6 +8,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, 'ToDo_secret'
+    register Sinatra::Flash
   end
 
   get '/' do
@@ -39,13 +40,15 @@ class ApplicationController < Sinatra::Base
     end
 
 
-    def redirect_if_not_logged_in
-      redirect '/sessions/new' unless signed_in?
-    end
-
     def redirect_if_logged_in
-      redirect '/listings' if signed_in?
+      flash[:errors] = ["You are already logged in."] if is_logged_in?
+      redirect "/games" if is_logged_in?
     end
 
+    def redirect_if_not_logged_in
+      flash[:errors] = ["You must be logged in."] unless is_logged_in?
+      redirect "/login" unless is_logged_in?
+    end
   end
+
 end
