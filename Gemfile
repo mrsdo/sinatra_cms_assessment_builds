@@ -2,7 +2,7 @@
 
 source 'http://rubygems.org'
 ruby '2.7.2'
-gem 'activerecord', '~> 5.2', '>= 5.2.0', require: 'active_record'
+gem 'activerecord', require: 'active_record'
 gem 'bcrypt'
 gem 'dotenv'
 gem 'faker'
