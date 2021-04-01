@@ -40,13 +40,15 @@ class ApplicationController < Sinatra::Base
     end
 
 
-    def redirect_if_not_logged_in
-      redirect '/users/signin.html' unless signed_in?
-    end
-
     def redirect_if_logged_in
-      redirect '/listings' if signed_in?
+      flash[:errors] = ["You are already logged in."] if signed_in?
+      redirect "/users/show.html" if signed_in?
     end
 
+    def redirect_if_not_logged_in
+      flash[:errors] = ["You must be logged in."] unless signed_in?
+      redirect "/users/signin.html" unless signed_in?
+    end
   end
+
 end

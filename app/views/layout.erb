@@ -36,11 +36,11 @@
         <li><a href="/users/<%= current_user.id %>">VIEW PROFILE</a></li>
         <li><a href="/listings/new">NEW LISTINGS</a></li>
         <li><a href="/listings">MY LISTINGS</a></li>
-        <li><a href="/logout">[ LOGOUT ]</a></li>
+        <li><a href="/signout">[ LOGOUT ]</a></li>
       <% else %>
         <li><a href="/listings/view-listings">LISTINGS</a></li>
         <li><a href="/signup">SIGNUP</a></li>
-        <li><a href="/login">LOGIN</a></li>
+        <li><a href="/signin">LOGIN</a></li>
       <% end %>
     </ul>
   </nav>
@@ -69,15 +69,14 @@
   </div>
 <!-- END Begin authentication check -->
 
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+    <% end %>
+
 <!-- Start Dynamic content -->
   <section style="background-color: #f7fafa; padding:15px;">
-    <div class="alert alert-info">
-      <% if flash[:errors] %>
-        <% flash[:errors].each do |error| %>
-          <p><%= error %></p>
-        <% end %>
-      <% end %>
-    </div>
 <%= yield %>
   </section>
 <!-- End Dynamic content -->
