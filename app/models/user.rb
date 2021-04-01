@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
                    :uniqueness => true
   validates :email, :presence => true,
                     :format => EMAIL_REGEX
+
+
+
+
 end

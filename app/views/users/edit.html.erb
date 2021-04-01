@@ -7,7 +7,7 @@
   <form class="form" action="/users/<%= @user.id %>" method="post">
 
   <input id="hidden" type="hidden" name="_method" value="patch">
-  <input type="text" name="user[fname]" value="<%= @user.fname %>">
+  <input type="text" name="fname" value="<%= @user.fname %>">
   <input type="text" name="lname" value="<%= @user.lname %>">
     <input type="text" name="username" value="<%= @user.username %>">
   <input type="text" name="email" value="<%= @user.email %>">

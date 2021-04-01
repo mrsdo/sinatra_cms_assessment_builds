@@ -22,7 +22,6 @@ default: &default
 development:
   adapter: mysql2
   encoding: utf8
-  host: localhost
   database: rc09_sinatra_crm_assessment
   pool: 5
   username: root
@@ -39,5 +38,5 @@ test:
 
 production:
   <<: *default
-
+  database: rc09_sinatra_crm_assessment
 

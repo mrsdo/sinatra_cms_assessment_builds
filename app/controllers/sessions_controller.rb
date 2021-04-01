@@ -1,32 +1,28 @@
 class SessionsController < ApplicationController
     ## handles changing my session ie. login/logout
 
-    # IF LOGGED IN, DON'T SHOW LOGIN
-
-
     # login route form
-    get '/signin' do
+    get '/login' do
         redirect_if_logged_in
-        # render form
+        # render form /login
         erb :'sessions/new'
     end
 
     # login route POST
-    post '/signin' do
+    post '/login' do
         redirect_if_logged_in
-        # take data find User
         @user = User.find_by(email: params["user"]["email"])
 
-        # if that user is authenticate, log in, redirect /movies
+        # If user is authenticated, log in, redirect /listings
         if @user && @user.authenticate(params["users"]["password"])
             session["user_id"] = user.id
             redirect "/listings/show.html"
-        # if user not valid, send back to /login
+        # If user not valid, send back to /login
         else
-            redirect "/signin"
+            redirect "/login"
         end
     end
 
-    # logout DELETE (get/post) - Application Controller
+    # logout DELETE (get/post - in Application Controller)
 
 end
